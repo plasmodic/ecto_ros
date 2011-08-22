@@ -1,5 +1,5 @@
 #NON INSTALL cmake configuration
-set(ECTO_ROS_INCLUDE_DIRS ${ecto_ros_SOURCE_DIR}/${ECTO_ROS_INCLUDE_PREFIX})
+set(ECTO_ROS_INCLUDE_DIRS ${ecto_ros_SOURCE_DIR}/include)
 configure_file(ecto_rosConfig.cmake.in ${CMAKE_BINARY_DIR}/ecto_rosConfig.cmake @ONLY)
 configure_file(ecto_rosConfig-version.cmake.in ${CMAKE_BINARY_DIR}/ecto_rosConfig-version.cmake @ONLY)
 
