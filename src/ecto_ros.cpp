@@ -33,6 +33,33 @@ namespace
   namespace bp = boost::python;
 
   void
+  removeROSArgs(bp::list sys_argv)
+  {
+    std::vector<std::string> args;
+    bp::stl_input_iterator<std::string> begin(sys_argv), end;
+    std::copy(begin, end, std::back_inserter(args));
+    char** argv = new char*[args.size()]; //array to emulate argv.
+    //
+    for(int i = 0, ie = args.size(); i < ie; ++i)
+    {
+      argv[i] = const_cast<char*>(args[i].data());
+    }
+
+    int ac = args.size();
+    std::vector<std::string> oargs;
+    ros::removeROSArgs(ac,argv,oargs);
+    //forward the arg stripping back to python
+    while (bp::len(sys_argv))
+      sys_argv.pop();
+
+    for (size_t i = 0; i < oargs.size(); ++i)
+    {
+      sys_argv.append(bp::str(oargs[i]));
+    }
+    delete[] argv;
+  }
+
+  void
   ros_init(bp::list sys_argv, const std::string& node_name, bool anonymous = true)
   {
     std::vector<std::string> args;
@@ -78,4 +105,6 @@ ECTO_DEFINE_MODULE(ecto_ros)
 {
   using bp::arg;
   bp::def("init", ros_init, ros_init_overloads("Initialized the roscpp node context.",(arg("argv"),arg("node_name"),arg("anonymous"))));
+  bp::def("strip_ros_args", removeROSArgs,"Removes the ROS remapping arguments.");
+
 }
