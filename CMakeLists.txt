@@ -6,9 +6,9 @@ add_definitions(-Wno-strict-aliasing)
 find_package(ecto REQUIRED) #brings in rosbuild_lite
 
 set(ECTO_ROS_VERSION 0.1.0)
-set(ECTO_ROS_PREFIX ${PROJECT_NAME}-${ECTO_ROS_VERSION} CACHE PATH "Mangled prefixer" FORCE)
-set(ECTO_ROS_INCLUDE_PREFIX include/${ECTO_ROS_PREFIX} CACHE PATH "Where ecto_ros include will live" FORCE)
-set(ECTO_ROS_SHARE_PREFIX share/${ECTO_ROS_PREFIX} CACHE PATH "Where ecto_ros share will live" FORCE)
+set(ECTO_ROS_PREFIX ${PROJECT_NAME}-${ECTO_ROS_VERSION} CACHE INTERNAL "Mangled prefixer" FORCE)
+set(ECTO_ROS_INCLUDE_PREFIX include/${ECTO_ROS_PREFIX} CACHE INTERNAL "Where ecto_ros include will live" FORCE)
+set(ECTO_ROS_SHARE_PREFIX share/${ECTO_ROS_PREFIX} CACHE INTERNAL "Where ecto_ros share will live" FORCE)
 
 option(BUILD_ECTO_ROS "should I build ecto_ros" ON)
 if (NOT BUILD_ECTO_ROS)

@@ -14,7 +14,7 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     gen_msg_wrappers.py
     PATHS ${ecto_ros_SOURCE_DIR}/cmake
     NO_DEFAULT_PATH)
-
+  mark_as_advanced(ECTO_ROS_GEN_MSG_WRAPPERS)
   if(NOT ${ROS_PACKAGE}_srcs)
     execute_process(COMMAND ${ECTO_ROS_GEN_MSG_WRAPPERS} ${ROS_PACKAGE}
       OUTPUT_VARIABLE ${ROS_PACKAGE}_srcs
@@ -27,7 +27,7 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     foreach(_SRC ${${ROS_PACKAGE}_srcs})
       list(APPEND _SRCS ${CMAKE_CURRENT_BINARY_DIR}/${_SRC})
     endforeach()
-    set(${ROS_PACKAGE}_srcs ${_SRCS} CACHE STRING "The generated srcs for ${ROS_PACKAGE}")
+    set(${ROS_PACKAGE}_srcs ${_SRCS} CACHE INTERNAL "The generated srcs for ${ROS_PACKAGE}")
     
   endif()
 
@@ -63,9 +63,8 @@ ectomodule(ecto_ros
   Synchronizer.cpp
   BagReader.cpp
   BagWriter.cpp
-  
   camera_sync_printer.cpp
-  )
+)
 
 link_ecto(ecto_ros
   ${OpenCV_LIBS}
