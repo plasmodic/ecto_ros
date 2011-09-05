@@ -16,19 +16,20 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     NO_DEFAULT_PATH)
   mark_as_advanced(ECTO_ROS_GEN_MSG_WRAPPERS)
   if(NOT ${ROS_PACKAGE}_srcs)
+    _set_ros_env()
     execute_process(COMMAND ${ECTO_ROS_GEN_MSG_WRAPPERS} ${ROS_PACKAGE}
       OUTPUT_VARIABLE ${ROS_PACKAGE}_srcs
       ERROR_VARIABLE ${ROS_PACKAGE}_srcs
       WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
       OUTPUT_STRIP_TRAILING_WHITESPACE
       )
+    _unset_ros_env()
     separate_arguments(${ROS_PACKAGE}_srcs UNIX_COMMAND ${${ROS_PACKAGE}_srcs})
     set(_SRCS)
     foreach(_SRC ${${ROS_PACKAGE}_srcs})
       list(APPEND _SRCS ${CMAKE_CURRENT_BINARY_DIR}/${_SRC})
     endforeach()
     set(${ROS_PACKAGE}_srcs ${_SRCS} CACHE INTERNAL "The generated srcs for ${ROS_PACKAGE}")
-    
   endif()
 
   list(LENGTH ${ROS_PACKAGE}_srcs len)
