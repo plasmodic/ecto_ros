@@ -16,8 +16,10 @@ if (NOT BUILD_ECTO_ROS)
   return()
 endif()
 
-if (NOT ROSPACK_EXECUTABLE)  # found in rosbuild_lite
-  message("*** unable to find rospack... is your environment set correctly?")
+rosbuild_lite_init() # found in rosbuild_lite
+
+if (NOT ROS_FOUND) #rosbuild_lite_init sets this
+  message("*** unable to find ROS... is your environment set correctly?")
   set (BUILD_ECTO_ROS OFF CACHE "" FORCE)
   return()
 else()
