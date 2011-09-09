@@ -148,6 +148,32 @@ namespace
   }
 
   void
+  toDepthImageMsg(const sensor_msgs::PointCloud& msg, sensor_msgs::Image& ros_image)
+  {
+    ros_image.height = msg.points.size();
+    ros_image.width = 1;
+    ros_image.encoding = mattype2enconding(CV_32F);
+    ros_image.is_bigendian = false;
+    ros_image.step = sizeof(float);
+    size_t size = ros_image.step * ros_image.height;
+    ros_image.data.resize(size);
+    memcpy(reinterpret_cast<void*>(ros_image.data.data()), reinterpret_cast<const void*>(msg.points.data()), size);
+  }
+
+  void
+  toDepthImageMsg(const sensor_msgs::PointCloud2& msg, sensor_msgs::Image& ros_image)
+  {
+    ros_image.height = msg.height;
+    ros_image.width = msg.width;
+    ros_image.encoding = mattype2enconding(CV_32F);
+    ros_image.is_bigendian = false;
+    ros_image.step = sizeof(float) * ros_image.width;
+    size_t size = ros_image.step * ros_image.height;
+    ros_image.data.resize(size);
+    memcpy(reinterpret_cast<void*>(ros_image.data.data()), reinterpret_cast<const void*>(msg.data.data()), size);
+  }
+
+  void
   toPointCloud(const cv::Mat& cloud, sensor_msgs::PointCloud& msg)
   {
     msg.points.resize(cloud.rows);
@@ -347,6 +373,46 @@ namespace ecto_ros
 
   struct Mat2PointCloud2 : Mat2PointCloud_<sensor_msgs::PointCloud2> {};
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  template<typename PointCloudT>
+  struct PointCloud2DepthImage_
+  {
+    typedef typename PointCloudT::Ptr CloudPtr;
+    typedef typename PointCloudT::ConstPtr CloudConstPtr;
+
+    static void
+    declare_io(const tendrils& /*p*/, tendrils& i, tendrils& o)
+    {
+      i.declare<CloudConstPtr>("cloud", "A sensor_msg::PointCloud2 message.");
+      o.declare<ImageConstPtr>("image", "A cv::Mat with only one channel for the depth.");
+    }
+
+    void
+    configure(const tendrils& p, const tendrils& i, const tendrils& o)
+    {
+      cloud_msg_ = i["cloud"];
+      depth_msg_ = o["image"];
+    }
+
+    int
+    process(const tendrils& i, const tendrils& o)
+    {
+      ImagePtr depth_msg(new Image());
+      toDepthImageMsg(**cloud_msg_, *depth_msg);
+      *depth_msg_ = depth_msg;
+      return ecto::OK;
+    }
+    std_msgs::Header header_;
+    std::string frame_id_;
+    ecto::spore<CloudConstPtr> cloud_msg_;
+    ecto::spore<ImageConstPtr> depth_msg_;
+    ecto::spore<std::string> encoding_;
+  };
+
+  struct PointCloud2DepthImage : PointCloud2DepthImage_<sensor_msgs::PointCloud> {};
+
+  struct PointCloud22DepthImage : PointCloud2DepthImage_<sensor_msgs::PointCloud2> {};
 
 }
 
@@ -354,4 +420,5 @@ ECTO_CELL(ecto_ros, ecto_ros::Image2Mat, "Image2Mat", "Converts an Image message
 ECTO_CELL(ecto_ros, ecto_ros::Mat2Image, "Mat2Image", "Converts an cv::Mat to Image message type.");
 ECTO_CELL(ecto_ros, ecto_ros::Mat2PointCloud, "Mat2PointCloud", "Converts an cv::Mat to PointCloud.");
 ECTO_CELL(ecto_ros, ecto_ros::Mat2PointCloud2, "Mat2PointCloud2", "Converts an cv::Mat to PointCloud2.");
-
+ECTO_CELL(ecto_ros, ecto_ros::PointCloud2DepthImage, "PointCloud2DepthImage", "Converts a PointCloud to a depth Image message type.");
+ECTO_CELL(ecto_ros, ecto_ros::PointCloud22DepthImage, "PointCloud22DepthImage", "Converts a PointCloud2 to a depth Image message type.");
