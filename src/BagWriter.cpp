@@ -114,12 +114,20 @@ namespace ecto_ros
     int
     process(const tendrils& in, const tendrils& out)
     {
+      ros::Time t;
+      if(!ros::isInitialized()){
+        ros::WallTime w = ros::WallTime::now();
+        t = ros::Time(w.sec,w.nsec);
+      }else
+      {
+        t = ros::Time::now();
+      }
       BOOST_FOREACH(const std::string& topic, topics_)
           {
             Bagger_base::ptr bagger;
             std::string key;
             boost::tie(key, bagger) = baggers_[topic];
-            bagger->write(bag_, topic, ros::Time::now(), *(in[key]));
+            bagger->write(bag_, topic, t, *(in[key]));
           }
       return ecto::OK;
     }

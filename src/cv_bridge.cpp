@@ -39,8 +39,24 @@
 #include <iostream>
 #include <string>
 
+#include <ros/ros.h>
+
 namespace
 {
+  void
+  header_stanza(std_msgs::Header& header)
+  {
+    header.seq++;
+    if (ros::isInitialized())
+    {
+      header.stamp = ros::Time::now();
+    }
+    else
+    {
+      ros::WallTime w = ros::WallTime::now();
+      header.stamp = ros::Time(w.sec,w.nsec);
+    }
+  }
   namespace enc = sensor_msgs::image_encodings;
   int
   getCvType(const std::string& encoding)
@@ -311,8 +327,8 @@ namespace ecto_ros
       {
         image_msg->encoding = *encoding_;
       }
-      header_.seq++;
-      header_.stamp = ros::Time::now();
+
+      header_stanza(header_);
       image_msg->header = header_;
       *cloud_msg_out_ = image_msg;
       return ecto::OK;
@@ -356,8 +372,7 @@ namespace ecto_ros
     {
       CloudPtr cloud_msg(new PointCloudT());
       toPointCloud(*mat_, *cloud_msg);
-      header_.seq++;
-      header_.stamp = ros::Time::now();
+      header_stanza(header_);
       cloud_msg->header = header_;
       *cloud_msg_out_ = cloud_msg;
       return ecto::OK;
@@ -369,9 +384,13 @@ namespace ecto_ros
     ecto::spore<std::string> encoding_;
   };
 
-  struct Mat2PointCloud : Mat2PointCloud_<sensor_msgs::PointCloud> {};
+  struct Mat2PointCloud: Mat2PointCloud_<sensor_msgs::PointCloud>
+  {
+  };
 
-  struct Mat2PointCloud2 : Mat2PointCloud_<sensor_msgs::PointCloud2> {};
+  struct Mat2PointCloud2: Mat2PointCloud_<sensor_msgs::PointCloud2>
+  {
+  };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -413,7 +432,6 @@ namespace ecto_ros
   struct PointCloud2DepthImage : PointCloud2DepthImage_<sensor_msgs::PointCloud> {};
 
   struct PointCloud22DepthImage : PointCloud2DepthImage_<sensor_msgs::PointCloud2> {};
-
 }
 
 ECTO_CELL(ecto_ros, ecto_ros::Image2Mat, "Image2Mat", "Converts an Image message to cv::Mat type.");
