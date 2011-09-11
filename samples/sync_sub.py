@@ -26,10 +26,10 @@ def do_ecto():
     
     graph = [
                 sync["image"] >> im2mat_rgb["image"],
-                im2mat_rgb["image"] >> highgui.imshow("rgb show", name="rgb", waitKey=5)[:],
+                im2mat_rgb["image"] >> highgui.imshow("rgb show", name="rgb")[:],
                 sync[:] >> drift_printer[:],
                 sync["depth"] >> im2mat_depth["image"],
-                im2mat_depth["image"] >> highgui.imshow("depth show", name="depth", waitKey= -1)[:]
+                im2mat_depth["image"] >> highgui.imshow("depth show", name="depth")[:]
             ]
     plasm = ecto.Plasm()
     plasm.connect(graph)

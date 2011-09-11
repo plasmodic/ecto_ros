@@ -11,7 +11,6 @@ CameraInfoSub = ecto_sensor_msgs.Subscriber_CameraInfo
 ImageBagger = ecto_sensor_msgs.Bagger_Image
 CameraInfoBagger = ecto_sensor_msgs.Bagger_CameraInfo
 def do_ecto():
-
     baggers = dict(image=ImageBagger(topic_name='/camera/rgb/image_mono'),
                    depth=ImageBagger(topic_name='/camera/depth/image_raw'),
                    )
@@ -31,10 +30,10 @@ def do_ecto():
     
     graph = [
                 sync["image"] >> im2mat_rgb["image"],
-                im2mat_rgb["image"] >> highgui.imshow("rgb show", name="rgb", waitKey=5)[:],
+                im2mat_rgb["image"] >> highgui.imshow("rgb show", name="rgb")[:],
                 sync[:] >> bagwriter[:],
                 sync["depth"] >> im2mat_depth["image"],
-                im2mat_depth["image"] >> highgui.imshow("depth show", name="depth", waitKey= -1)[:]
+                im2mat_depth["image"] >> highgui.imshow("depth show", name="depth")[:]
             ]
     plasm = ecto.Plasm()
     plasm.connect(graph)
@@ -42,9 +41,6 @@ def do_ecto():
     
     sched = ecto.schedulers.Threadpool(plasm)
     sched.execute(niter=30)#capture a second.
-
-    #sched = ecto.schedulers.Singlethreaded(plasm)
-    #sched.execute()
 if __name__ == "__main__":
     ecto_ros.init(sys.argv, "ecto_node")
     do_ecto()
