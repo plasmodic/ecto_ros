@@ -45,45 +45,48 @@ namespace ecto_ros
 
   struct RT2PoseStamped
   {
-  
-    static void declare_params(tendrils& p)
+
+    static void
+    declare_params(tendrils& p)
     {
-      p.declare<std::string>("frame_id","The frame id that generated the pose.").required(true);
+      p.declare<std::string>("frame_id", "The frame id that generated the pose.").required(true);
     }
-    static void declare_io(const tendrils& /*p*/, tendrils& i, tendrils& o)
+    static void
+    declare_io(const tendrils& /*p*/, tendrils& i, tendrils& o)
     {
-      i.declare<cv::Mat> ("R",
-                                "3X3 Rotation matrix.");
-      i.declare<cv::Mat> ("T",
-                                "3X1 Translation vector.");
-      o.declare<PoseStampedConstPtr> ("pose", "A geometry_msgs::PoseStamped.");
+      i.declare<cv::Mat>("R", "3X3 Rotation matrix.");
+      i.declare<cv::Mat>("T", "3X1 Translation vector.");
+      o.declare<PoseStampedConstPtr>("pose", "A geometry_msgs::PoseStamped.");
     }
-    void configure(const tendrils& p, const tendrils& i, const tendrils& o)
+    void
+    configure(const tendrils& p, const tendrils& i, const tendrils& o)
     {
       R_ = i["R"];
       T_ = i["T"];
       pose_ = o["pose"];
       frame_id_ = p["frame_id"];
     }
-    int process(const tendrils&, const tendrils&)
+    int
+    process(const tendrils&, const tendrils&)
     {
       wpose_.reset(new PoseStamped);
       *pose_ = wpose_;
-      if(R_->empty() || T_->empty())
+      if (R_->empty() || T_->empty())
         return ecto::OK;
-      cv::Mat R,T;
-      R_->convertTo(R,CV_32F); T_->convertTo(T,CV_32F);
+      cv::Mat R, T;
+      R_->convertTo(R, CV_32F);
+      T_->convertTo(T, CV_32F);
       Eigen::Matrix3f rotation_matrix;
       for (unsigned int j = 0; j < 3; ++j)
         for (unsigned int i = 0; i < 3; ++i)
-          rotation_matrix(j, i) = R.at<float> (j, i);
+          rotation_matrix(j, i) = R.at<float>(j, i);
 
       Eigen::Quaternion<float> quaternion(rotation_matrix);
- 
+
       PoseStamped& pose = *wpose_;
-      pose.pose.position.x = T.at<float> (0);
-      pose.pose.position.y = T.at<float> (1);
-      pose.pose.position.z = T.at<float> (2);
+      pose.pose.position.x = T.at<float>(0);
+      pose.pose.position.y = T.at<float>(1);
+      pose.pose.position.z = T.at<float>(2);
       pose.pose.orientation.x = quaternion.x();
       pose.pose.orientation.y = quaternion.y();
       pose.pose.orientation.z = quaternion.z();
@@ -96,9 +99,56 @@ namespace ecto_ros
     PoseStampedPtr wpose_;
     ecto::spore<std::string> frame_id_;
     ecto::spore<PoseStampedConstPtr> pose_;
-    ecto::spore<cv::Mat> R_,T_;
+    ecto::spore<cv::Mat> R_, T_;
   };
 
+  struct PoseStamped2RT
+  {
+    static void
+    declare_io(const tendrils& /*p*/, tendrils& i, tendrils& o)
+    {
+      i.declare<PoseStampedConstPtr>("pose", "A geometry_msgs::PoseStamped.");
+      o.declare<cv::Mat>("R", "3X3 Rotation matrix.");
+      o.declare<cv::Mat>("T", "3X1 Translation vector.");
+      o.declare<std::string>("frame_id", "The frame id of the pose.");
+    }
+    void
+    configure(const tendrils& p, const tendrils& i, const tendrils& o)
+    {
+      pose_ = i["pose"];
+      R_ = o["R"];
+      T_ = o["T"];
+      frame_id_ = o["frame_id"];
+    }
+    int
+    process(const tendrils&, const tendrils&)
+    {
+      wpose_ = *pose_;
+      cv::Mat_<double> R(3, 3), T(3, 1);
+      geometry_msgs::Quaternion q = wpose_->pose.orientation;
+      Eigen::Quaternion<float> quaternion(q.w, q.x, q.y, q.z); //w first !!
+
+      Eigen::Matrix3f rotation_matrix(quaternion.matrix());
+      for (unsigned int j = 0; j < 3; ++j)
+        for (unsigned int i = 0; i < 3; ++i)
+          R(j, i) = rotation_matrix(j, i);
+
+      geometry_msgs::Pose::_position_type position = wpose_->pose.position;
+      T(0) = position.x;
+      T(1) = position.y;
+      T(2) = position.z;
+      *R_ = R;
+      *T_ = T;
+      return ecto::OK;
+    }
+    PoseStampedConstPtr wpose_;
+    ecto::spore<std::string> frame_id_;
+    ecto::spore<PoseStampedConstPtr> pose_;
+    ecto::spore<cv::Mat> R_, T_;
+  };
 }
 
-ECTO_CELL(ecto_ros, ecto_ros::RT2PoseStamped, "RT2PoseStamped", "Takes an R and T cv::Mat style and emmits a stamped pose.");
+ECTO_CELL(ecto_ros, ecto_ros::RT2PoseStamped, "RT2PoseStamped",
+          "Takes an R and T cv::Mat style and emits a stamped pose.");
+ECTO_CELL(ecto_ros, ecto_ros::PoseStamped2RT, "PoseStamped2RT",
+          "Takes a geometry_msgs::PoseStamped and turn it into a cv::Mat R and T.");
