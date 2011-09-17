@@ -34,4 +34,4 @@ if __name__ == "__main__":
                        help='The frame id to associate this camera with.')
     args = parser.parse_args()
     
-    do_ecto(args.device_id, args.frame_id, args.threads)
+    do_ecto(args.device_id, args.frame_id)
