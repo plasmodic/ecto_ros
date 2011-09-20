@@ -1,4 +1,4 @@
-url: 'https://github.com/plasmodic/ecto_opencv/tarball/4e32569'
+url: 'https://github.com/plasmodic/ecto_opencv/tarball/beta0'
 install-script: |
   #!/bin/bash
   set -o errexit
