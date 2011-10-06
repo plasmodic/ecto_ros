@@ -69,7 +69,8 @@ namespace ecto_ros
         bp::object key = l[j][0];
         bp::object value = l[j][1];
         std::string keystring = bp::extract<std::string>(key);
-        ecto::cell::ptr cell = bp::extract<ecto::cell::ptr>(value);
+        bp::object cell_impl = getattr(value, "__impl");
+        ecto::cell::ptr cell = bp::extract<ecto::cell::ptr>(cell_impl);
         Bagger_base::ptr bagger;
         cell->parameters["bagger"] >> bagger;
         out.declare(keystring, bagger->instantiate());
@@ -86,7 +87,8 @@ namespace ecto_ros
         bp::object key = l[j][0];
         bp::object value = l[j][1];
         std::string keystring = bp::extract<std::string>(key);
-        ecto::cell::ptr cell = bp::extract<ecto::cell::ptr>(value);
+        bp::object cell_impl = getattr(value, "__impl");
+        ecto::cell::ptr cell = bp::extract<ecto::cell::ptr>(cell_impl);
         std::string topic;
         cell->parameters["topic_name"] >> topic;
         Bagger_base::ptr bagger;

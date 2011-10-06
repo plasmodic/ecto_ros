@@ -41,9 +41,9 @@ namespace ecto_ros
     ~Bagger_base()
     {
     }
-    virtual ecto::tendril::ptr
+    virtual ecto::tendril_ptr
     instantiate() const = 0;
-    virtual ecto::tendril::ptr
+    virtual ecto::tendril_ptr
     instantiate(rosbag::View::iterator message) const = 0;
 
     virtual
@@ -65,16 +65,16 @@ namespace ecto_ros
     {
     }
 
-    ecto::tendril::ptr
+    ecto::tendril_ptr
     instantiate() const
     {
-      ecto::tendril::ptr tp = ecto::make_tendril<MessageConstPtr>();
+      ecto::tendril_ptr tp = ecto::make_tendril<MessageConstPtr>();
       return tp;
     }
-    ecto::tendril::ptr
+    ecto::tendril_ptr
     instantiate(rosbag::View::iterator message) const
     {
-      ecto::tendril::ptr tp = instantiate();
+      ecto::tendril_ptr tp = instantiate();
       MessageConstPtr mcp = message->instantiate<MessageT>();
       if (mcp)
         tp << mcp;
