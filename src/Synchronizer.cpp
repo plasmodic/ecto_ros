@@ -77,7 +77,7 @@ namespace ecto_ros
         bp::object key = l[j][0];
         bp::object value = l[j][1];
         std::string keystring = bp::extract<std::string>(key);
-        ecto::cell::ptr cell = bp::extract<ecto::cell::ptr>(value);
+        ecto::cell::ptr cell = bp::extract<ecto::cell::ptr>(bp::getattr(value,"__impl"));
         cells_.push_back(cell);
         cell->configure();
       }
