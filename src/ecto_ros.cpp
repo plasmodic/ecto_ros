@@ -82,7 +82,7 @@ namespace
     {
       ros::init(ac, argv, node_name.c_str(), flags);
       RosLifetime::its_a_ros_life_.reset(new RosLifetime());
-      ROS_INFO_STREAM("Initialied ros. node_name: " << ros::this_node::getName());
+      ROS_INFO_STREAM("Initialized ROS. node_name: " << ros::this_node::getName());
     }
     else
     {
