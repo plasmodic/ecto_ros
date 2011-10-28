@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-PKG = 'ecto_ros'
-import roslib; roslib.load_manifest(PKG)
 import ecto
 import ecto_ros, ecto_sensor_msgs
 from ecto_opencv.highgui import imshow
@@ -32,7 +30,7 @@ def do_ecto():
     plasm.connect(graph)
     
     #We'll use a threadpool based scheduler to execute this one.
-    sched = ecto.schedulers.Threadpool(plasm)
+    sched = ecto.schedulers.Singlethreaded(plasm)
     sched.execute() #execute forever
 
 if __name__ == "__main__":
