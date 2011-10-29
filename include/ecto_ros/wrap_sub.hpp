@@ -43,6 +43,8 @@ namespace ecto_ros
   struct Subscriber
   {
     typedef typename MessageT::ConstPtr MessageConstPtr;
+    typedef typename MessageT::Ptr MessagePtr;
+
     //ros subscription stuffs
     ros::NodeHandle nh_;
     ros::Subscriber sub_;
@@ -50,7 +52,7 @@ namespace ecto_ros
     int queue_size_;
     boost::condition_variable cond_;
     boost::mutex mut_;
-    MessageConstPtr data_;
+    MessagePtr data_;
     ecto::spore<MessageConstPtr> out_;
     boost::thread sub_thread_;
 
@@ -77,7 +79,8 @@ namespace ecto_ros
       //the same thread as the process function.
       {
         boost::lock_guard<boost::mutex> lock(mut_);
-        data_ = data;
+        data_.reset(new MessageT);
+        *data_ = *data;
       }
       cond_.notify_one();
     }
@@ -113,11 +116,12 @@ namespace ecto_ros
       boost::unique_lock<boost::mutex> lock(mut_);
       while (!data_)
       {
-        cond_.wait(lock);
+        boost::this_thread::interruption_point();
+        cond_.timed_wait(lock,boost::posix_time::millisec(5));
       }
       *out_ = data_;
-      //reset the data_ so that the condition variable still works.
       data_.reset();
+      //reset the data_ so that the condition variable still works.
       return ecto::OK;
     }
   };

@@ -276,7 +276,7 @@ namespace ecto_ros
     process(const tendrils& i, const tendrils& o)
     {
       ImageConstPtr image = *image_msg_;
-      cv::Mat& mat = *mat_;
+      cv::Mat mat;
       // Construct matrix pointing to source data
       int source_type = getCvType(image->encoding);
       cv::Mat temp((int) image->height, (int) image->width, source_type, const_cast<uint8_t*>(&image->data[0]),
@@ -285,6 +285,7 @@ namespace ecto_ros
         cv::cvtColor(temp, mat, CV_BGR2RGB);
       else
         temp.copyTo(mat);
+      mat.copyTo(*mat_);
       return ecto::OK;
     }
     ecto::spore<ImageConstPtr> image_msg_;
