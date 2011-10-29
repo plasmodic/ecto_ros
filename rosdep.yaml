@@ -1,11 +1,14 @@
-ecto0.1:
-  ubuntu: ecto0.1-dev
-
 opencv2.3:
   ubuntu: libopencv2.3-dev
   debian: libopencv2.3-dev
 
+ecto:
+  ubuntu:
+    source:
+      uri: 'file:///home/ecto_ws/rospkg/workspace/ecto_ros/ecto.rdmanifest'
+
 ecto_opencv:
   ubuntu:
     source:
-      url: https://raw.github.com/plasmodic/ecto_ros/master/ecto_ros/ecto_opencv.rdmanifest
+      uri: 'file:///home/ecto_ws/rospkg/workspace/ecto_ros/ecto_opencv.rdmanifest'
+

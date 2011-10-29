@@ -30,9 +30,8 @@
   </export>
   
   <rosdep name="opencv2.3"/>
-  <rosdep name="ecto0.1"/>
+  <!--<rosdep name="ecto"/>-->
   <rosdep name="ecto_opencv"/>
-  
 </package>
 
 
