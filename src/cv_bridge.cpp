@@ -54,7 +54,7 @@ namespace
     else
     {
       ros::WallTime w = ros::WallTime::now();
-      header.stamp = ros::Time(w.sec,w.nsec);
+      header.stamp = ros::Time(w.sec, w.nsec);
     }
   }
   namespace enc = sensor_msgs::image_encodings;
@@ -300,6 +300,7 @@ namespace ecto_ros
     {
       p.declare<std::string>("frame_id", "Frame this data is associated with", "default_frame");
       p.declare<std::string>("encoding", "ROS image message encoding override.");
+      p.declare<bool>("swap_rgb", "Swap the red and blue channels", false);
 
     }
 
@@ -318,12 +319,20 @@ namespace ecto_ros
       frame_id_ = p.get<std::string>("frame_id");
       header_.frame_id = frame_id_;
       encoding_ = p["encoding"];
+      swap_rgb_ = p.get<bool>("swap_rgb");
+
     }
     int
     process(const tendrils& i, const tendrils& o)
     {
       ImagePtr image_msg(new Image);
-      toImageMsg(*mat_, *image_msg);
+      cv::Mat mat;
+      if (swap_rgb_)
+        cv::cvtColor(*mat_, mat, CV_BGR2RGB);
+      else
+        mat = *mat_;
+
+      toImageMsg(mat, *image_msg);
       if (encoding_.user_supplied())
       {
         image_msg->encoding = *encoding_;
@@ -339,6 +348,7 @@ namespace ecto_ros
     ecto::spore<ImageConstPtr> cloud_msg_out_;
     ecto::spore<cv::Mat> mat_;
     ecto::spore<std::string> encoding_;
+    bool swap_rgb_;
   };
 
   template<typename PointCloudT>
@@ -430,14 +440,20 @@ namespace ecto_ros
     ecto::spore<std::string> encoding_;
   };
 
-  struct PointCloud2DepthImage : PointCloud2DepthImage_<sensor_msgs::PointCloud> {};
+  struct PointCloud2DepthImage: PointCloud2DepthImage_<sensor_msgs::PointCloud>
+  {
+  };
 
-  struct PointCloud22DepthImage : PointCloud2DepthImage_<sensor_msgs::PointCloud2> {};
+  struct PointCloud22DepthImage: PointCloud2DepthImage_<sensor_msgs::PointCloud2>
+  {
+  };
 }
 
 ECTO_CELL(ecto_ros, ecto_ros::Image2Mat, "Image2Mat", "Converts an Image message to cv::Mat type.");
 ECTO_CELL(ecto_ros, ecto_ros::Mat2Image, "Mat2Image", "Converts an cv::Mat to Image message type.");
 ECTO_CELL(ecto_ros, ecto_ros::Mat2PointCloud, "Mat2PointCloud", "Converts an cv::Mat to PointCloud.");
 ECTO_CELL(ecto_ros, ecto_ros::Mat2PointCloud2, "Mat2PointCloud2", "Converts an cv::Mat to PointCloud2.");
-ECTO_CELL(ecto_ros, ecto_ros::PointCloud2DepthImage, "PointCloud2DepthImage", "Converts a PointCloud to a depth Image message type.");
-ECTO_CELL(ecto_ros, ecto_ros::PointCloud22DepthImage, "PointCloud22DepthImage", "Converts a PointCloud2 to a depth Image message type.");
+ECTO_CELL(ecto_ros, ecto_ros::PointCloud2DepthImage, "PointCloud2DepthImage",
+          "Converts a PointCloud to a depth Image message type.");
+ECTO_CELL(ecto_ros, ecto_ros::PointCloud22DepthImage, "PointCloud22DepthImage",
+          "Converts a PointCloud2 to a depth Image message type.");

@@ -61,6 +61,7 @@ namespace ecto_ros
     void
     configure(const tendrils& p, const tendrils& i, const tendrils& o)
     {
+      ros::Time::init();
       R_ = i["R"];
       T_ = i["T"];
       pose_ = o["pose"];
