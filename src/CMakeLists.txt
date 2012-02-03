@@ -1,7 +1,31 @@
 find_package(OpenCV REQUIRED)
 
-find_package(ROS COMPONENTS roscpp rosbag geometry_msgs sensor_msgs message_filters REQUIRED)
-find_package(Eigen)
+find_package(ROS REQUIRED gencpp geometry_msgs message_filters roscpp rosbag sensor_msgs)
+find_package(Eigen REQUIRED)
+
+include_directories(SYSTEM ${Eigen_INCLUDE_DIRS})
+
+#attempts to set ENV variables so that ROS commands will work.
+#This appears to work well on linux, but may be questionable on
+#other platforms.
+macro (_set_ros_env)
+  set(ORIG_ROS_ROOT $ENV{ROS_ROOT})
+  set(ORIG_ROS_PACKAGE_PATH $ENV{ROS_PACKAGE_PATH})
+  set(ORIG_PATH $ENV{PATH})
+  set(ORIG_PYTHONPATH $ENV{PYTHONPATH})
+  set(ENV{ROS_ROOT} ${ROS_ROOT})
+  set(ENV{ROS_PACKAGE_PATH} ${ROS_PACKAGE_PATH})
+  set(ENV{PATH} "${ROS_ROOT}/bin:$ENV{PATH}")
+  set(ENV{PYTHONPATH} "${ROS_ROOT}/core/roslib/src:$ENV{PYTHONPATH}")
+endmacro()
+
+#unset environment
+macro (_unset_ros_env)
+  set(ENV{ROS_ROOT} ${ORIG_ROS_ROOT})
+  set(ENV{ROS_PACKAGE_PATH} ${ORIG_ROS_PACKAGE_PATH})
+  set(ENV{PATH} "${ORIG_PATH}")
+  set(ENV{PYTHONPATH} "${ORIG_PYTHONPATH}")
+endmacro()
 
 macro(pubsub_gen_wrap ROS_PACKAGE)
   find_program(ECTO_ROS_GEN_MSG_WRAPPERS
@@ -10,12 +34,14 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     NO_DEFAULT_PATH)
   mark_as_advanced(ECTO_ROS_GEN_MSG_WRAPPERS)
   if(NOT ${ROS_PACKAGE}_srcs)
+    _set_ros_env()
     execute_process(COMMAND ${ECTO_ROS_GEN_MSG_WRAPPERS} ${ROS_PACKAGE}
       OUTPUT_VARIABLE ${ROS_PACKAGE}_srcs
-      ERROR_VARIABLE ${ROS_PACKAGE}_srcs
+      ERROR_VARIABLE ${ROS_PACKAGE}_srcs_err
       WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
       OUTPUT_STRIP_TRAILING_WHITESPACE
       )
+    _unset_ros_env()
     separate_arguments(${ROS_PACKAGE}_srcs UNIX_COMMAND ${${ROS_PACKAGE}_srcs})
     set(_SRCS)
     foreach(_SRC ${${ROS_PACKAGE}_srcs})

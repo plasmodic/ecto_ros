@@ -16,15 +16,10 @@ if (NOT BUILD_ECTO_ROS)
   return()
 endif()
 
-find_package(Eigen REQUIRED)
-find_package(ros REQUIRED)
-
 set(CMAKE_MODULE_PATH ${ecto_ros_SOURCE_DIR}/cmake)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
 
 include_directories(${ecto_ros_SOURCE_DIR}/include)
-include_directories(${Eigen_INCLUDE_DIRS})
-
 
 add_subdirectory(include/ecto_ros)
 add_subdirectory(src)
