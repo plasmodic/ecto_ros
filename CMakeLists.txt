@@ -16,22 +16,16 @@ if (NOT BUILD_ECTO_ROS)
   return()
 endif()
 
-rosbuild_lite_init() # found in rosbuild_lite
-
-if (NOT ROS_FOUND) #rosbuild_lite_init sets this
-  message("*** unable to find ROS... is your environment set correctly?")
-  set (BUILD_ECTO_ROS OFF CACHE "" FORCE)
-  return()
-else()
-  if(ROS_CONFIGURE_VERBOSE)
-    message(STATUS "+ ROSPACK_EXE: ${ROSPACK_EXE}")
-  endif()
-endif()
+find_package(Eigen REQUIRED)
+find_package(ros REQUIRED)
 
 set(CMAKE_MODULE_PATH ${ecto_ros_SOURCE_DIR}/cmake)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
 
 include_directories(${ecto_ros_SOURCE_DIR}/include)
+include_directories(${Eigen_INCLUDE_DIRS})
+
+
 add_subdirectory(include/ecto_ros)
 add_subdirectory(src)
 add_subdirectory(cmake)

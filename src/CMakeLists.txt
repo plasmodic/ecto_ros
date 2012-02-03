@@ -1,13 +1,7 @@
-ecto_python_env_gen(${LIBRARY_OUTPUT_PATH})
+find_package(OpenCV REQUIRED)
 
-find_package(OpenCV 2.3.1 EXACT REQUIRED)
-
-find_ros_package(roscpp)
-find_ros_package(rosbag)
-find_ros_package(eigen)
-find_ros_package(geometry_msgs)
-find_ros_package(sensor_msgs)
-find_ros_package(message_filters)
+find_package(ROS COMPONENTS roscpp rosbag geometry_msgs sensor_msgs message_filters REQUIRED)
+find_package(Eigen)
 
 macro(pubsub_gen_wrap ROS_PACKAGE)
   find_program(ECTO_ROS_GEN_MSG_WRAPPERS
@@ -16,14 +10,12 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     NO_DEFAULT_PATH)
   mark_as_advanced(ECTO_ROS_GEN_MSG_WRAPPERS)
   if(NOT ${ROS_PACKAGE}_srcs)
-    _set_ros_env()
     execute_process(COMMAND ${ECTO_ROS_GEN_MSG_WRAPPERS} ${ROS_PACKAGE}
       OUTPUT_VARIABLE ${ROS_PACKAGE}_srcs
       ERROR_VARIABLE ${ROS_PACKAGE}_srcs
       WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
       OUTPUT_STRIP_TRAILING_WHITESPACE
       )
-    _unset_ros_env()
     separate_arguments(${ROS_PACKAGE}_srcs UNIX_COMMAND ${${ROS_PACKAGE}_srcs})
     set(_SRCS)
     foreach(_SRC ${${ROS_PACKAGE}_srcs})
@@ -36,13 +28,14 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
   if(ROS_CONFIGURE_VERBOSE)
     message(STATUS "+ ${ROS_PACKAGE}: ${len} message types")
   endif() 
-  find_ros_package(${ROS_PACKAGE})
+  find_package(${ROS_PACKAGE})
   ectomodule(ecto_${ROS_PACKAGE}
     ${${ROS_PACKAGE}_srcs}
     )
   link_ecto(ecto_${ROS_PACKAGE}
     ecto_ros_ectomodule
     ${roscpp_LIBRARIES}
+    ${rosbag_LIBRARIES}
     ${${ROS_PACKAGE}_LIBRARIES}
     )
   install_ecto_module(ecto_${ROS_PACKAGE})
@@ -70,6 +63,7 @@ ectomodule(ecto_ros
 link_ecto(ecto_ros
   ${OpenCV_LIBS}
   ${roscpp_LIBRARIES}
+  ${rosbag_LIBRARIES}
   ${geometry_msgs_LIBRARIES}
   ${sensor_msgs_LIBRARIES}
   )
