@@ -3,7 +3,10 @@ find_package(OpenCV REQUIRED)
 find_package(ROS REQUIRED gencpp geometry_msgs message_filters roscpp rosbag sensor_msgs)
 find_package(Eigen REQUIRED)
 
-include_directories(SYSTEM ${Eigen_INCLUDE_DIRS})
+include_directories(SYSTEM
+    ${Eigen_INCLUDE_DIRS}
+    ${ROS_INCLUDE_DIRS}
+)
 
 #attempts to set ENV variables so that ROS commands will work.
 #This appears to work well on linux, but may be questionable on
