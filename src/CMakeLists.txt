@@ -1,7 +1,10 @@
 find_package(OpenCV REQUIRED)
-
-find_package(ROS REQUIRED gencpp geometry_msgs message_filters roscpp rosbag sensor_msgs)
+find_package(ROS QUIET gencpp geometry_msgs message_filters roscpp rosbag sensor_msgs)
 find_package(Eigen REQUIRED)
+
+if (NOT roscpp_FOUND)
+    include_directories(/opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/include/)
+endif()
 
 include_directories(SYSTEM
     ${Eigen_INCLUDE_DIRS}

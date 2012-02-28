@@ -1,9 +1,18 @@
 cmake_minimum_required(VERSION 2.8)
 project(ecto_ros)
+find_package(catkin REQUIRED)
+catkin_stack(ecto_ros)
 
 add_definitions(-Wno-strict-aliasing)
 
-find_package(ecto REQUIRED) #brings in rosbuild_lite
+find_package(ecto REQUIRED)
+
+catkin_project(ecto_ros
+    VERSION 0.1.0
+    INCLUDE_DIRS include
+)
+
+set_ecto_install_package_name(ecto_ros)
 
 set(ECTO_ROS_VERSION 0.1.0)
 set(ECTO_ROS_PREFIX ${PROJECT_NAME}-${ECTO_ROS_VERSION} CACHE INTERNAL "Mangled prefixer" FORCE)
