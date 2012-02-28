@@ -12,6 +12,8 @@ catkin_project(ecto_ros
     INCLUDE_DIRS include
 )
 
+rosbuild_lite_init()
+
 set_ecto_install_package_name(ecto_ros)
 
 set(ECTO_ROS_VERSION 0.1.0)

@@ -1,10 +1,20 @@
 find_package(OpenCV REQUIRED)
-find_package(ROS QUIET gencpp geometry_msgs message_filters roscpp rosbag sensor_msgs)
-find_package(Eigen REQUIRED)
 
-if (NOT roscpp_FOUND)
-    include_directories(/opt/ros/electric/stacks/ros_comm/clients/cpp/roscpp/include/)
+# TODO remove the following after electric
+if (ROS_ELECTRIC_FOUND)
+#    find_library(geometry_msgs_LIBRARIES geometry_msgs /opt/ros/elet/lib/)
+    find_ros_package(roscpp)
+    find_ros_package(rosbag)
+    find_ros_package(eigen)
+    find_ros_package(geometry_msgs)
+    find_ros_package(nav_msgs)
+    find_ros_package(sensor_msgs)
+    find_ros_package(message_filters)
+else()
+    find_package(ROS QUIET COMPONENTS gencpp geometry_msgs message_filters roscpp rosbag sensor_msgs)
 endif()
+
+find_package(Eigen REQUIRED)
 
 include_directories(SYSTEM
     ${Eigen_INCLUDE_DIRS}
@@ -43,7 +53,7 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     _set_ros_env()
     execute_process(COMMAND ${ECTO_ROS_GEN_MSG_WRAPPERS} ${ROS_PACKAGE}
       OUTPUT_VARIABLE ${ROS_PACKAGE}_srcs
-      ERROR_VARIABLE ${ROS_PACKAGE}_srcs
+      ERROR_VARIABLE ${ROS_PACKAGE}_err
       WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
       OUTPUT_STRIP_TRAILING_WHITESPACE
       )
@@ -62,7 +72,8 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
   list(LENGTH ${ROS_PACKAGE}_srcs len)
   if(ROS_CONFIGURE_VERBOSE)
     message(STATUS "+ ${ROS_PACKAGE}: ${len} message types")
-  endif() 
+  endif()
+
   ectomodule(ecto_${ROS_PACKAGE}
     ${${ROS_PACKAGE}_srcs}
     )
