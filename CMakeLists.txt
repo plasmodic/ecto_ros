@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(ecto_ros)
 find_package(catkin REQUIRED)
-catkin_stack(ecto_ros)
+catkin_stack()
 
 add_definitions(-Wno-strict-aliasing)
 
@@ -36,6 +36,19 @@ add_subdirectory(include/ecto_ros)
 add_subdirectory(src)
 add_subdirectory(cmake)
 
+# Make sure the ecto modules are part of a Python module
+set(python_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PYTHON_PACKAGES_PATH}/ecto_ros)
+
+configure_file(python/__init__.py.in
+               ${python_LIBRARY_OUTPUT_DIRECTORY}/__init__.py
+               @ONLY
+)
+
+install(FILES ${python_LIBRARY_OUTPUT_DIRECTORY}/__init__.py
+        DESTINATION ${ecto_module_PYTHON_INSTALL} COMPONENT main
+)
+
+# Deal with the tests
 option(BUILD_TEST "Build tests" ON)
 if(BUILD_TEST)
   enable_testing()

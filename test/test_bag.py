@@ -1,10 +1,11 @@
 #!/usr/bin/env python
-import ecto
-import ecto_ros, ecto_sensor_msgs
-import sys
-import subprocess
-import yaml
 from ecto_ros_test_utils import *
+import ecto
+from ecto_ros.ecto_ros import BagReader, Image2Mat
+import ecto_ros.ecto_sensor_msgs as ecto_sensor_msgs
+import subprocess
+import sys
+import yaml
 
 ImageBagger = ecto_sensor_msgs.Bagger_Image
 CameraInfoBagger = ecto_sensor_msgs.Bagger_CameraInfo
@@ -21,12 +22,12 @@ def do_ecto():
                    depth=ImageBagger(topic_name='/camera/depth/image'),
                    )
     
-    bagreader = ecto_ros.BagReader('Bag Ripper',
+    bagreader = BagReader('Bag Ripper',
                                     baggers=baggers,
                                     bag=bagname,
                                   )
-    im2mat_rgb = ecto_ros.Image2Mat()
-    im2mat_depth = ecto_ros.Image2Mat()
+    im2mat_rgb = Image2Mat()
+    im2mat_depth = Image2Mat()
     counter_rgb = ecto.Counter()
     counter_depth = ecto.Counter()
 

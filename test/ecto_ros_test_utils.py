@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 import ecto
-import ecto_ros, ecto_sensor_msgs
-import sys, subprocess, yaml, time
+import ecto_ros
+import ecto_ros.ecto_sensor_msgs as ecto_sensor_msgs
+import sys
+import subprocess
+import yaml
+import time
 
 def bag_counts(bagname):
     proc = subprocess.Popen(['rosbag','info','-k','topics','-y',bagname],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
