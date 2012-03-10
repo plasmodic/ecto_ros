@@ -1,1 +1,0 @@
-set(ecto_ros_INCLUDE_DIRS @ECTO_ROS_INCLUDE_DIRS@)

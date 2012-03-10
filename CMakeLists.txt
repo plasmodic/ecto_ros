@@ -1,14 +1,13 @@
 cmake_minimum_required(VERSION 2.8)
 project(ecto_ros)
 find_package(catkin REQUIRED)
-catkin_stack()
 
 add_definitions(-Wno-strict-aliasing)
 
 find_package(ecto REQUIRED)
 
+catkin_stack()
 catkin_project(ecto_ros
-    VERSION 0.1.0
     INCLUDE_DIRS include
 )
 
@@ -16,8 +15,6 @@ rosbuild_lite_init()
 
 set_ecto_install_package_name(ecto_ros)
 
-set(ECTO_ROS_VERSION 0.1.0)
-set(ECTO_ROS_PREFIX ${PROJECT_NAME}-${ECTO_ROS_VERSION} CACHE INTERNAL "Mangled prefixer" FORCE)
 set(ECTO_ROS_INCLUDE_PREFIX include/${ECTO_ROS_PREFIX} CACHE INTERNAL "Where ecto_ros include will live" FORCE)
 set(ECTO_ROS_SHARE_PREFIX share/${ECTO_ROS_PREFIX} CACHE INTERNAL "Where ecto_ros share will live" FORCE)
 
@@ -34,7 +31,6 @@ include_directories(${ecto_ros_SOURCE_DIR}/include)
 
 add_subdirectory(include/ecto_ros)
 add_subdirectory(src)
-add_subdirectory(cmake)
 
 # Make sure the ecto modules are part of a Python module
 set(python_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PYTHON_PACKAGES_PATH}/ecto_ros)
@@ -54,3 +50,6 @@ if(BUILD_TEST)
   enable_testing()
   add_subdirectory(test)
 endif()
+
+catkin_add_env_hooks(10.ecto_ros SHELLS all)
+
