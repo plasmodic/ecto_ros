@@ -5,7 +5,7 @@ Author: Ethan Rublee <erublee@willowgarage.com>, Vincent Rabaud <vrabaud@willowg
 Maintainer:  Vincent Rabaud <vrabaud@willowgarage.com>
 Homepage:  http://ecto.willowgarage.com/recognition
 
-Depends: catkin, ecto, std_msgs, sensor_msgs, geometry_msgs, nav_msgs
+Depends: catkin, common_msgs, ecto, std_msgs, sensor_msgs, geometry_msgs
 
 Catkin-CopyrightType:  willowgarage
 Catkin-DebRulesType: cmake
