@@ -3,7 +3,7 @@ if (ROS_ELECTRIC_FOUND)
     find_ros_package(roscpp)
     find_ros_package(rosbag)
 else()
-    find_package(ROS QUIET COMPONENTS gencpp genmsg roscpp rosbag)
+    find_package(ROS REQUIRED gencpp genmsg roscpp rosbag)
 endif()
 
 #attempts to set ENV variables so that ROS commands will work.
