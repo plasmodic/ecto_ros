@@ -5,7 +5,7 @@ foreach(file pubsub_gen_wrap.cmake gen_msg_wrappers.py)
 endforeach()
 
 #install the extra CMake files
-install(DIRECTORY ${CMAKE_BINARY_DIR}/cmake/ecto_ros
+install(DIRECTORY ${CMAKE_BINARY_DIR}/cmake/ecto_ros/
         DESTINATION share/ecto_ros/cmake
         COMPONENT main
 )
