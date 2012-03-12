@@ -1,3 +1,11 @@
+# TODO remove the following after electric
+if (ROS_ELECTRIC_FOUND)
+    find_ros_package(roscpp)
+    find_ros_package(rosbag)
+else()
+    find_package(ROS QUIET COMPONENTS gencpp genmsg roscpp rosbag)
+endif()
+
 #attempts to set ENV variables so that ROS commands will work.
 #This appears to work well on linux, but may be questionable on
 #other platforms.

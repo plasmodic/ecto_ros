@@ -2,23 +2,22 @@ find_package(OpenCV REQUIRED)
 
 # TODO remove the following after electric
 if (ROS_ELECTRIC_FOUND)
-#    find_library(geometry_msgs_LIBRARIES geometry_msgs /opt/ros/elet/lib/)
     find_ros_package(roscpp)
-    find_ros_package(rosbag)
     find_ros_package(eigen)
     find_ros_package(geometry_msgs)
     find_ros_package(nav_msgs)
     find_ros_package(sensor_msgs)
-    find_ros_package(message_filters)
+    find_ros_package(std_msgs)
 else()
-    find_package(ROS QUIET COMPONENTS gencpp geometry_msgs message_filters roscpp rosbag sensor_msgs)
+    find_package(ROS QUIET COMPONENTS geometry_msgs nav_msgs sensor_msgs std_msgs)
+    find_package(ROS QUIET COMPONENTS roscpp)
 endif()
 
 find_package(Eigen REQUIRED)
 
 include_directories(SYSTEM
-    ${Eigen_INCLUDE_DIRS}
-    ${ROS_INCLUDE_DIRS}
+                    ${Eigen_INCLUDE_DIRS}
+                    ${ROS_INCLUDE_DIRS}
 )
 
 ectomodule(ecto_ros
