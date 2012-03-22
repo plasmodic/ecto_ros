@@ -16,15 +16,6 @@ rosbuild_lite_init()
 
 set_ecto_install_package_name(ecto_ros)
 
-set(ECTO_ROS_INCLUDE_PREFIX include/${ECTO_ROS_PREFIX} CACHE INTERNAL "Where ecto_ros include will live" FORCE)
-set(ECTO_ROS_SHARE_PREFIX share/${ECTO_ROS_PREFIX} CACHE INTERNAL "Where ecto_ros share will live" FORCE)
-
-option(BUILD_ECTO_ROS "should I build ecto_ros" ON)
-if (NOT BUILD_ECTO_ROS)
-  message("Skipping build of ecto_ros because BUILD_ECTO_ROS is OFF")
-  return()
-endif()
-
 set(CMAKE_MODULE_PATH ${ecto_ros_SOURCE_DIR}/cmake)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
 
@@ -54,4 +45,3 @@ if(BUILD_TEST)
 endif()
 
 catkin_add_env_hooks(10.ecto_ros SHELLS all)
-
