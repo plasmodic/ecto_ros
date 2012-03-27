@@ -26,14 +26,12 @@ add_subdirectory(include/ecto_ros)
 add_subdirectory(src)
 
 # Make sure the ecto modules are part of a Python module
-set(python_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PYTHON_PACKAGES_PATH}/ecto_ros)
-
 configure_file(python/__init__.py.in
-               ${python_LIBRARY_OUTPUT_DIRECTORY}/__init__.py
+               ${ecto_module_PYTHON_OUTPUT}/__init__.py
                @ONLY
 )
 
-install(FILES ${python_LIBRARY_OUTPUT_DIRECTORY}/__init__.py
+install(FILES ${ecto_module_PYTHON_OUTPUT}/__init__.py
         DESTINATION ${ecto_module_PYTHON_INSTALL} COMPONENT main
 )
 
@@ -43,5 +41,3 @@ if(BUILD_TEST)
   enable_testing()
   add_subdirectory(test)
 endif()
-
-catkin_add_env_hooks(10.ecto_ros SHELLS all)
