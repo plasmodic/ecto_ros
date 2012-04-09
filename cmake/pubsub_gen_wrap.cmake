@@ -67,7 +67,11 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     message(STATUS "+ ${ROS_PACKAGE}: ${len} message types")
   endif()
 
-  find_package(roscpp REQUIRED)
+  if (ROS_ELECTRIC_FOUND)
+    find_ros_package(roscpp)
+  else()
+    find_package(roscpp REQUIRED)
+  endif()
   include_directories(SYSTEM
                       ${roscpp_INCLUDE_DIRS}
                       ${CMAKE_BINARY_DIR}/gen/cpp/${ROS_PACKAGE}
