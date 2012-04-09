@@ -28,20 +28,28 @@ macro (_unset_ros_env)
   set(ENV{PYTHONPATH} "${ORIG_PYTHONPATH}")
 endmacro()
 
+# Macro that builds default ecto cells for publishing/subscribing for a given
+# ROS package. If extra arguments are given, they must be the message names
 macro(pubsub_gen_wrap ROS_PACKAGE)
   find_program(ECTO_ROS_GEN_MSG_WRAPPERS
     gen_msg_wrappers.py
     PATHS ${ecto_ros_SOURCE_DIR}/cmake
     NO_DEFAULT_PATH)
   mark_as_advanced(ECTO_ROS_GEN_MSG_WRAPPERS)
+  set(ARGN_CLEAN ${ROS_PACKAGE})
+  if (${ARGC} GREATER 1)
+    foreach(msg ${ARGN})
+      list(APPEND ARGN_CLEAN "${ROS_PACKAGE}/${msg}")
+    endforeach()
+  endif()
   if(NOT ${ROS_PACKAGE}_srcs)
     _set_ros_env()
-    execute_process(COMMAND ${ECTO_ROS_GEN_MSG_WRAPPERS} ${ROS_PACKAGE}
+    execute_process(COMMAND ${ECTO_ROS_GEN_MSG_WRAPPERS} ${ARGN_CLEAN}
       OUTPUT_VARIABLE ${ROS_PACKAGE}_srcs
       ERROR_VARIABLE ${ROS_PACKAGE}_err
       WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
       OUTPUT_STRIP_TRAILING_WHITESPACE
-      )
+    )
     _unset_ros_env()
     separate_arguments(${ROS_PACKAGE}_srcs UNIX_COMMAND ${${ROS_PACKAGE}_srcs})
     set(_SRCS)
@@ -59,6 +67,11 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     message(STATUS "+ ${ROS_PACKAGE}: ${len} message types")
   endif()
 
+  find_package(roscpp REQUIRED)
+  include_directories(SYSTEM
+                      ${roscpp_INCLUDE_DIRS}
+                      ${CMAKE_BINARY_DIR}/gen/cpp/${ROS_PACKAGE}
+  )
   ectomodule(ecto_${ROS_PACKAGE}
     ${${ROS_PACKAGE}_srcs}
     )
@@ -76,6 +89,5 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     PROPERTIES
     OBJECT_DEPENDS ${ECTO_ROS_GEN_MSG_WRAPPERS}
     )
-
+  add_dependencies(ecto_${ROS_PACKAGE}_ectomodule ${ROS_PACKAGE}_gencpp)
 endmacro()
-

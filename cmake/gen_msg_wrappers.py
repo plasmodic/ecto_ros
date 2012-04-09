@@ -39,20 +39,24 @@ ECTO_DEFINE_MODULE(ecto_%(msg_pkg)s)
 '''
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2 or '-h' in sys.argv:
-        print '''Usage:
-./gen_msg_wrappers.py <ROS_PACKAGE>'''
+    if len(sys.argv) < 2 or '-h' in sys.argv:
+        print '''Usage: ./gen_msg_wrappers.py <ROS_PACKAGE> or 
+                        ./gen_msg_wrappers.py <ROS_PACKAGE> <MSG_1> <MSG_2> ...'''
         sys.exit(1)
     
     msg_pkg = sys.argv[1]
-    (o,e) = subprocess.Popen(['rosmsg','package',msg_pkg],stdout=subprocess.PIPE).communicate()
+    if len(sys.argv) == 2:
+        (o,e) = subprocess.Popen(['rosmsg','package',msg_pkg],stdout=subprocess.PIPE).communicate()
+        msgs = [x.strip() for x in o.split('\n')]
+    else:
+        msgs = sys.argv[2:]
+    
     #strip newlines
-    msgs = [x.strip() for x in o.split('\n')]
     filename = 'ecto_%(msg_pkg)s.cpp'%locals()
     print filename
     with open(filename, 'wt') as module_source_code:
         module_source_code.write(module_code%locals())
-        
+
     for msg in msgs:
         if len(msg) == 0 : continue
         msg_pkg = msg.split('/')[0]
