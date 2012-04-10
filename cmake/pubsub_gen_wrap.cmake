@@ -33,7 +33,7 @@ endmacro()
 macro(pubsub_gen_wrap ROS_PACKAGE)
   find_program(ECTO_ROS_GEN_MSG_WRAPPERS
     gen_msg_wrappers.py
-    PATHS ${ecto_ros_SOURCE_DIR}/cmake
+    PATHS ${ecto_ros_SOURCE_DIR}/cmake ${ecto_ros_DIR}
     NO_DEFAULT_PATH)
   mark_as_advanced(ECTO_ROS_GEN_MSG_WRAPPERS)
   set(ARGN_CLEAN ${ROS_PACKAGE})
@@ -80,7 +80,6 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     ${${ROS_PACKAGE}_srcs}
     )
   link_ecto(ecto_${ROS_PACKAGE}
-    ecto_ros_ectomodule
     ${roscpp_LIBRARIES}
     ${rosbag_LIBRARIES}
     ${${ROS_PACKAGE}_LIBRARIES}
