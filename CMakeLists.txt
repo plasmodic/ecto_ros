@@ -25,15 +25,8 @@ add_subdirectory(cmake)
 add_subdirectory(include/ecto_ros)
 add_subdirectory(src)
 
-# Make sure the ecto modules are part of a Python module
-configure_file(python/__init__.py.in
-               ${ecto_module_PYTHON_OUTPUT}/__init__.py
-               @ONLY
-)
-
-install(FILES ${ecto_module_PYTHON_OUTPUT}/__init__.py
-        DESTINATION ${ecto_module_PYTHON_INSTALL} COMPONENT main
-)
+# configure and install Python
+catkin_python_setup()
 
 # Deal with the tests
 option(BUILD_TEST "Build tests" ON)
