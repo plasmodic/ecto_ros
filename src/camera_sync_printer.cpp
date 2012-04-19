@@ -80,5 +80,5 @@ namespace ecto_ros
 
 }
 
-ECTO_CELL(ecto_ros, ecto_ros::DriftPrinter, "DriftPrinter", "Prints timing drift. For image,depth,camera_infos.")
-;
+ECTO_CELL(ecto_ros_main, ecto_ros::DriftPrinter, "DriftPrinter", "Prints timing drift. For image,depth,camera_infos.")
+

@@ -101,7 +101,7 @@ namespace
   BOOST_PYTHON_FUNCTION_OVERLOADS(ros_init_overloads, ros_init, 2, 3)
 }
 
-ECTO_DEFINE_MODULE(ecto_ros)
+ECTO_DEFINE_MODULE(ecto_ros_main)
 {
   using bp::arg;
   bp::def("init", ros_init, ros_init_overloads("Initialized the roscpp node context.",(arg("argv"),arg("node_name"),arg("anonymous"))));

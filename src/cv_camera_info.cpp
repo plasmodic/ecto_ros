@@ -150,7 +150,7 @@ namespace ecto_ros
     ecto::spore<std::string> frame_id_;
   };
 }
-ECTO_CELL(ecto_ros, ecto_ros::CameraInfo2Cv, "CameraInfo2Cv",
-          "Takes a CameraInfo message and converts to OpenCV types.");
-ECTO_CELL(ecto_ros, ecto_ros::Cv2CameraInfo, "Cv2CameraInfo",
-          "Takes opencv style camera info, and converts to an CameraInfo message.");
+ECTO_CELL(ecto_ros_main, ecto_ros::CameraInfo2Cv, "CameraInfo2Cv",
+          "Takes a CameraInfo message and converts to OpenCV types.")
+ECTO_CELL(ecto_ros_main, ecto_ros::Cv2CameraInfo, "Cv2CameraInfo",
+          "Takes opencv style camera info, and converts to an CameraInfo message.")

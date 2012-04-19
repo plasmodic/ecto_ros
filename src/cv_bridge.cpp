@@ -449,11 +449,11 @@ namespace ecto_ros
   };
 }
 
-ECTO_CELL(ecto_ros, ecto_ros::Image2Mat, "Image2Mat", "Converts an Image message to cv::Mat type.");
-ECTO_CELL(ecto_ros, ecto_ros::Mat2Image, "Mat2Image", "Converts an cv::Mat to Image message type.");
-ECTO_CELL(ecto_ros, ecto_ros::Mat2PointCloud, "Mat2PointCloud", "Converts an cv::Mat to PointCloud.");
-ECTO_CELL(ecto_ros, ecto_ros::Mat2PointCloud2, "Mat2PointCloud2", "Converts an cv::Mat to PointCloud2.");
-ECTO_CELL(ecto_ros, ecto_ros::PointCloud2DepthImage, "PointCloud2DepthImage",
-          "Converts a PointCloud to a depth Image message type.");
-ECTO_CELL(ecto_ros, ecto_ros::PointCloud22DepthImage, "PointCloud22DepthImage",
-          "Converts a PointCloud2 to a depth Image message type.");
+ECTO_CELL(ecto_ros_main, ecto_ros::Image2Mat, "Image2Mat", "Converts an Image message to cv::Mat type.")
+ECTO_CELL(ecto_ros_main, ecto_ros::Mat2Image, "Mat2Image", "Converts an cv::Mat to Image message type.")
+ECTO_CELL(ecto_ros_main, ecto_ros::Mat2PointCloud, "Mat2PointCloud", "Converts an cv::Mat to PointCloud.")
+ECTO_CELL(ecto_ros_main, ecto_ros::Mat2PointCloud2, "Mat2PointCloud2", "Converts an cv::Mat to PointCloud2.")
+ECTO_CELL(ecto_ros_main, ecto_ros::PointCloud2DepthImage, "PointCloud2DepthImage",
+          "Converts a PointCloud to a depth Image message type.")
+ECTO_CELL(ecto_ros_main, ecto_ros::PointCloud22DepthImage, "PointCloud22DepthImage",
+          "Converts a PointCloud2 to a depth Image message type.")

@@ -149,7 +149,7 @@ namespace ecto_ros
   };
 }
 
-ECTO_CELL(ecto_ros, ecto_ros::RT2PoseStamped, "RT2PoseStamped",
-          "Takes an R and T cv::Mat style and emits a stamped pose.");
-ECTO_CELL(ecto_ros, ecto_ros::PoseStamped2RT, "PoseStamped2RT",
-          "Takes a geometry_msgs::PoseStamped and turn it into a cv::Mat R and T.");
+ECTO_CELL(ecto_ros_main, ecto_ros::RT2PoseStamped, "RT2PoseStamped",
+          "Takes an R and T cv::Mat style and emits a stamped pose.")
+ECTO_CELL(ecto_ros_main, ecto_ros::PoseStamped2RT, "PoseStamped2RT",
+          "Takes a geometry_msgs::PoseStamped and turn it into a cv::Mat R and T.")

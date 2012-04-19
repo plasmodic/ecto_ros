@@ -21,7 +21,7 @@ include_directories(SYSTEM
                     ${ROS_INCLUDE_DIRS}
 )
 
-ectomodule(ecto_ros
+ectomodule(ecto_ros_main
   ecto_ros.cpp
   cv_bridge.cpp
   cv_pose.cpp
@@ -32,7 +32,7 @@ ectomodule(ecto_ros
   camera_sync_printer.cpp
 )
 
-link_ecto(ecto_ros
+link_ecto(ecto_ros_main
   ${OpenCV_LIBS}
   ${roscpp_LIBRARIES}
   ${rosbag_LIBRARIES}
@@ -45,8 +45,8 @@ pubsub_gen_wrap(sensor_msgs)
 pubsub_gen_wrap(geometry_msgs)
 pubsub_gen_wrap(nav_msgs)
 
-install_ecto_module(ecto_ros)
+install_ecto_module(ecto_ros_main)
 
-set_target_properties(ecto_ros_ectomodule
+set_target_properties(ecto_ros_main_ectomodule
   PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE
   )

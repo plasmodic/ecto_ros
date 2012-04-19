@@ -151,4 +151,4 @@ namespace ecto_ros
 
 }
 
-ECTO_CELL(ecto_ros, ecto_ros::BagReader, "BagReader", "BagReader reads bags.");
+ECTO_CELL(ecto_ros_main, ecto_ros::BagReader, "BagReader", "BagReader reads bags.")

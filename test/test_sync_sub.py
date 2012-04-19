@@ -2,7 +2,7 @@
 from ecto_opencv import highgui
 from ecto_ros_test_utils import *
 import ecto
-from ecto_ros.ecto_ros import Synchronizer
+from ecto_ros import Synchronizer
 import ecto_ros.ecto_sensor_msgs as ecto_sensor_msgs
 import sys
 

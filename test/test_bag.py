@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from ecto_ros_test_utils import *
 import ecto
-from ecto_ros.ecto_ros import BagReader, Image2Mat
+from ecto_ros import BagReader, Image2Mat
 import ecto_ros.ecto_sensor_msgs as ecto_sensor_msgs
 import subprocess
 import sys
