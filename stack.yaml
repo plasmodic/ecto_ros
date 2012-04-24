@@ -1,11 +1,11 @@
 Catkin-ProjectName: ecto_ros
-Version: 0.3.2
+Version: 0.3.3
 Description: A set of generic cells to interact with ROS
 Author: Ethan Rublee <erublee@willowgarage.com>, Vincent Rabaud <vrabaud@willowgarage.com>
 Maintainer:  Vincent Rabaud <vrabaud@willowgarage.com>
 Homepage:  http://ecto.willowgarage.com/recognition
 
-Depends: catkin, common_msgs, ecto, ros_comm, std_msgs
+Depends: catkin, common_msgs, ecto, opencv2, ros_comm, std_msgs
 
 Catkin-CopyrightType:  willowgarage
 Catkin-DebRulesType: cmake
