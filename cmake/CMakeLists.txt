@@ -9,6 +9,7 @@ endforeach()
 install(DIRECTORY ${CMAKE_BINARY_DIR}/cmake/ecto_ros/
         DESTINATION share/ecto_ros/cmake
         COMPONENT main
+        USE_SOURCE_PERMISSIONS
 )
 
 include(pubsub_gen_wrap.cmake)

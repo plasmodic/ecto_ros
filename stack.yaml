@@ -1,5 +1,5 @@
 Catkin-ProjectName: ecto_ros
-Version: 0.3.5
+Version: 0.3.6
 Description: A set of generic cells to interact with ROS
 Author: Ethan Rublee <erublee@willowgarage.com>, Vincent Rabaud <vrabaud@willowgarage.com>
 Maintainer:  Vincent Rabaud <vrabaud@willowgarage.com>

@@ -47,9 +47,13 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     execute_process(COMMAND ${ECTO_ROS_GEN_MSG_WRAPPERS} ${ARGN_CLEAN}
       OUTPUT_VARIABLE ${ROS_PACKAGE}_srcs
       ERROR_VARIABLE ${ROS_PACKAGE}_err
+      RESULT_VARIABLE ${ROS_PACKAGE}_res
       WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
       OUTPUT_STRIP_TRAILING_WHITESPACE
     )
+    if (${ROS_PACKAGE}_res)
+      message(STATUS "pubsub_gen_wrap returned: " ${${ROS_PACKAGE}_res})
+    endif()
     _unset_ros_env()
     separate_arguments(${ROS_PACKAGE}_srcs UNIX_COMMAND ${${ROS_PACKAGE}_srcs})
     set(_SRCS)
