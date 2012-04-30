@@ -60,7 +60,7 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
   endif()
   find_package(${ROS_PACKAGE} QUIET)
 
-  include_directories(${ecto_ros_SOURCE_DIR}/include)
+  include_directories(${ecto_ros_INCLUDE_DIRS})
 
   list(LENGTH ${ROS_PACKAGE}_srcs len)
   if(ROS_CONFIGURE_VERBOSE)

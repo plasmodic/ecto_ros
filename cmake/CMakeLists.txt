@@ -1,6 +1,7 @@
 foreach(file pubsub_gen_wrap.cmake gen_msg_wrappers.py)
     file(COPY ${PROJECT_SOURCE_DIR}/cmake/${file}
          DESTINATION ${CMAKE_BINARY_DIR}/cmake/ecto_ros
+         USE_SOURCE_PERMISSIONS
     )
 endforeach()
 
