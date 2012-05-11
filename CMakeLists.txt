@@ -22,7 +22,6 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
 include_directories(${ecto_ros_SOURCE_DIR}/include)
 
 add_subdirectory(cmake)
-add_subdirectory(include/ecto_ros)
 add_subdirectory(src)
 
 # configure and install Python
