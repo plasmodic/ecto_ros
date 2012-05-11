@@ -1,10 +1,7 @@
 #!/usr/bin/env python
 import ecto
-import ecto_ros, ecto_sensor_msgs
+import ecto_ros, ecto_ros.ecto_sensor_msgs as ecto_sensor_msgs
 from ecto_opencv import highgui
-import sys
-import subprocess
-import time
 from ecto_ros_test_utils import *
 
 ImageSub = ecto_sensor_msgs.Subscriber_Image
@@ -35,9 +32,8 @@ if __name__ == "__main__":
     bagname = sys.argv[1]
     msg_counts = bag_counts(bagname)
     try:
-      roscore = start_roscore(delay=1)
-      for i in range(1, 10):
-          do_ecto(bagname, msg_counts, ecto.schedulers.Singlethreaded)
+        roscore = start_roscore(delay=1)
+        for i in range(1, 10):
+            do_ecto(bagname, msg_counts, ecto.schedulers.Singlethreaded)
     finally:
-      roscore.terminate()
-    
+        roscore.terminate()

@@ -1,7 +1,4 @@
 #!/usr/bin/env python
-import ecto
-import ecto_ros
-import ecto_ros.ecto_sensor_msgs as ecto_sensor_msgs
 import sys
 import subprocess
 import yaml
