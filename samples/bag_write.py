@@ -1,8 +1,6 @@
 #!/usr/bin/env python
-PKG = 'ecto_ros' # this package name
-import roslib; roslib.load_manifest(PKG)
 import ecto
-import ecto_ros, ecto_sensor_msgs
+import ecto_ros, ecto_ros.ecto_sensor_msgs as ecto_sensor_msgs
 from ecto_opencv import highgui
 import sys
 
