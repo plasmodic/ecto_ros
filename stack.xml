@@ -1,0 +1,25 @@
+<stack>
+  <name>ecto_ros</name>
+  <version>0.3.8</version>
+  <description>A set of generic cells to interact with ROS</description>
+  <author email="erublee@willowgarage.com">Ethan Rublee</author>
+  <author email="vrabaud@willowgarage.com">Vincent Rabaud</author>
+  <maintainer email="vrabaud@willowgarage.com">Vincent Rabaud</maintainer>
+  <license>BSD</license>
+  <copyright>WIllow Garage</copyright>
+
+  <url>http://ecto.willowgarage.com/recognition</url>
+  <build_depends>catkin</build_depends>
+  <build_depends>common_msgs</build_depends>
+  <build_depends>ecto</build_depends>
+  <build_depends>eigen</build_depends>
+  <build_depends>opencv2</build_depends>
+  <build_depends>ros_comm</build_depends>
+  <build_depends>std_msgs</build_depends>
+  <depends>common_msgs</depends>
+  <depends>ecto</depends>
+  <depends>eigen</depends>
+  <depends>opencv2</depends>
+  <depends>ros_comm</depends>
+  <depends>std_msgs</depends>
+</stack>
