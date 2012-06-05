@@ -1,6 +1,6 @@
 <stack>
   <name>ecto_ros</name>
-  <version>0.3.8</version>
+  <version>0.3.9</version>
   <description>A set of generic cells to interact with ROS</description>
   <author email="erublee@willowgarage.com">Ethan Rublee</author>
   <author email="vrabaud@willowgarage.com">Vincent Rabaud</author>
@@ -13,9 +13,12 @@
   <build_depends>common_msgs</build_depends>
   <build_depends>ecto</build_depends>
   <build_depends>eigen</build_depends>
+  <build_depends>genmsg</build_depends>
+  <build_depends>langs</build_depends>
   <build_depends>opencv2</build_depends>
   <build_depends>ros_comm</build_depends>
   <build_depends>std_msgs</build_depends>
+
   <depends>common_msgs</depends>
   <depends>ecto</depends>
   <depends>eigen</depends>
