@@ -1,11 +1,3 @@
-# TODO remove the following after electric
-if (ROS_ELECTRIC_FOUND)
-    find_ros_package(roscpp)
-    find_ros_package(rosbag)
-else()
-    find_package(ROS REQUIRED gencpp genmsg roscpp rosbag)
-endif()
-
 #attempts to set ENV variables so that ROS commands will work.
 #This appears to work well on linux, but may be questionable on
 #other platforms.
@@ -31,6 +23,14 @@ endmacro()
 # Macro that builds default ecto cells for publishing/subscribing for a given
 # ROS package. If extra arguments are given, they must be the message names
 macro(pubsub_gen_wrap ROS_PACKAGE)
+  # TODO remove the following after electric
+  if (ROS_ELECTRIC_FOUND)
+    find_ros_package(roscpp)
+    find_ros_package(rosbag)
+  else()
+    find_package(ROS REQUIRED gencpp genmsg roscpp rosbag)
+  endif()
+
   find_program(ECTO_ROS_GEN_MSG_WRAPPERS
     gen_msg_wrappers.py
     PATHS ${ecto_ros_SOURCE_DIR}/cmake ${ecto_ros_DIR}
