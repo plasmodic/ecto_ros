@@ -49,19 +49,19 @@ namespace ecto_ros
     ros::NodeHandle nh_;
     ros::Subscriber sub_;
     std::string topic_;
-    int queue_size_;
+    size_t queue_size_;
     boost::condition_variable cond_;
     boost::mutex mut_;
-    MessagePtr data_;
     ecto::spore<MessageConstPtr> out_;
     boost::thread sub_thread_;
+    std::list<MessageConstPtr> queue_;
 
     void
     setupSubs()
     {
       //look up remapping
       std::string topic = nh_.resolveName(topic_, true);
-      sub_ = nh_.subscribe(topic, queue_size_, &Subscriber::dataCallback, this);
+      sub_ = nh_.subscribe(topic, 1, &Subscriber::dataCallback, this);
       ROS_INFO_STREAM("Subscribed to topic:" << topic << " with queue size of " << queue_size_);
     }
 
@@ -79,8 +79,9 @@ namespace ecto_ros
       //the same thread as the process function.
       {
         boost::lock_guard<boost::mutex> lock(mut_);
-        data_.reset(new MessageT);
-        *data_ = *data;
+        queue_.push_back(data);
+        if (queue_.size() > queue_size_)
+          queue_.pop_front();
       }
       cond_.notify_one();
     }
@@ -114,13 +115,13 @@ namespace ecto_ros
       //condition variable idiom, blocks until the data has
       //been filled by ros.
       boost::unique_lock<boost::mutex> lock(mut_);
-      while (!data_)
+      while (queue_.empty())
       {
         boost::this_thread::interruption_point();
         cond_.timed_wait(lock,boost::posix_time::millisec(5));
       }
-      *out_ = data_;
-      data_.reset();
+      *out_ = queue_.front();
+      queue_.pop_front();
       //reset the data_ so that the condition variable still works.
       return ecto::OK;
     }
