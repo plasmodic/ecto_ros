@@ -14,8 +14,6 @@ catkin_project(ecto_ros
 
 rosbuild_lite_init()
 
-set_ecto_install_package_name(ecto_ros)
-
 set(CMAKE_MODULE_PATH ${ecto_ros_SOURCE_DIR}/cmake)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
 

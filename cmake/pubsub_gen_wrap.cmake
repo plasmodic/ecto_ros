@@ -1,3 +1,5 @@
+include(CMakeParseArguments)
+
 #attempts to set ENV variables so that ROS commands will work.
 #This appears to work well on linux, but may be questionable on
 #other platforms.
@@ -20,9 +22,21 @@ macro (_unset_ros_env)
   set(ENV{PYTHONPATH} "${ORIG_PYTHONPATH}")
 endmacro()
 
+#       
 # Macro that builds default ecto cells for publishing/subscribing for a given
 # ROS package. If extra arguments are given, they must be the message names
+#
+# :param ROS_PACAKGE: the name of your ROS package to wrap module
+# :param INSTALL: if given, it will also install the ecto module
+#                 you might not want to install test modules.
+# :param DESTINATION: the relative path where you want to install your ecto
+#                     module (it will be built/install in the right place but
+#                     you can specify submodules). e.g: ${PROJECT_NAME}/ecto_cells
+# :param MESSAGES: the list of messages you want to wrap
+#
 macro(pubsub_gen_wrap ROS_PACKAGE)
+  cmake_parse_arguments(ARGS "INSTALL" "DESTINATION" "MESSAGES" ${ARGN})
+
   # TODO remove the following after electric
   if (ROS_ELECTRIC_FOUND)
     find_ros_package(roscpp)
@@ -36,12 +50,12 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     PATHS ${ecto_ros_SOURCE_DIR}/cmake ${ecto_ros_DIR}
     NO_DEFAULT_PATH)
   mark_as_advanced(ECTO_ROS_GEN_MSG_WRAPPERS)
+
   set(ARGN_CLEAN ${ROS_PACKAGE})
-  if (${ARGC} GREATER 1)
-    foreach(msg ${ARGN})
-      list(APPEND ARGN_CLEAN "${ROS_PACKAGE}/${msg}")
-    endforeach()
-  endif()
+  foreach(msg ${ARGS_MESSAGES})
+    list(APPEND ARGN_CLEAN "${ROS_PACKAGE}/${msg}")
+  endforeach()
+
   if(NOT ${ROS_PACKAGE}_srcs)
     _set_ros_env()
     execute_process(COMMAND ${ECTO_ROS_GEN_MSG_WRAPPERS} ${ARGN_CLEAN}
@@ -80,15 +94,21 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
                       ${roscpp_INCLUDE_DIRS}
                       ${CMAKE_BINARY_DIR}/gen/cpp/${ROS_PACKAGE}
   )
-  ectomodule(ecto_${ROS_PACKAGE}
-    ${${ROS_PACKAGE}_srcs}
+  if (ARGS_INSTALL)
+    ectomodule(ecto_${ROS_PACKAGE} DESTINATION ${ARGS_DESTINATION}
+                                   INSTALL
+                                   ${${ROS_PACKAGE}_srcs}
     )
+  else()
+    ectomodule(ecto_${ROS_PACKAGE} DESTINATION ${ARGS_DESTINATION}
+                                   ${${ROS_PACKAGE}_srcs}
+    )
+  endif()
   link_ecto(ecto_${ROS_PACKAGE}
     ${roscpp_LIBRARIES}
     ${rosbag_LIBRARIES}
     ${${ROS_PACKAGE}_LIBRARIES}
     )
-  install_ecto_module(ecto_${ROS_PACKAGE})
   set_target_properties(ecto_${ROS_PACKAGE}_ectomodule
     PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE
     )
