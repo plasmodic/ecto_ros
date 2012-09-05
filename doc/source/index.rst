@@ -1,11 +1,11 @@
-ecto_ros
-========
+ecto_ros: ROS Integration & Bagfile Support
+===========================================
 
 ``ecto_ros`` contains publishers, subscribers, bag readers and bag
 writers for many common ROS message types.  You can place subscribers
 as the inputs to your graph and publishers at the outputs, using
 converter cells as necessary (for instance, to get from Image messages
-to ``cv::Mat`` objets).  
+to ``cv::Mat`` objects).  
 
 .. toctree::
    :maxdepth: 2
