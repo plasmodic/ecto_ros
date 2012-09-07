@@ -1,23 +1,18 @@
 cmake_minimum_required(VERSION 2.8)
 project(ecto_ros)
 find_package(catkin REQUIRED)
-
-add_definitions(-Wno-strict-aliasing)
-
-find_package(ecto REQUIRED)
-
 catkin_stack()
 catkin_project(ecto_ros
                INCLUDE_DIRS include
                CFG_EXTRAS ecto_ros-extras.cmake
 )
+find_package(ecto REQUIRED)
+
+add_definitions(-Wno-strict-aliasing)
 
 rosbuild_lite_init()
 
-set(CMAKE_MODULE_PATH ${ecto_ros_SOURCE_DIR}/cmake)
-set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
-
-include_directories(${ecto_ros_SOURCE_DIR}/include)
+include_directories(include)
 
 add_subdirectory(cmake)
 add_subdirectory(src)

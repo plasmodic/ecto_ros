@@ -42,7 +42,11 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     find_ros_package(roscpp)
     find_ros_package(rosbag)
   else()
+    if (ROS_FUERTE_FOUND)
     find_package(ROS REQUIRED gencpp genmsg roscpp rosbag)
+    else()
+    find_package(catkin REQUIRED gencpp genmsg roscpp rosbag)
+    endif()
   endif()
 
   find_program(ECTO_ROS_GEN_MSG_WRAPPERS
