@@ -7,14 +7,14 @@ foreach(file pubsub_gen_wrap.cmake gen_msg_wrappers.py)
 endforeach()
 
 # install the extra CMake files
-install(DIRECTORY ${CMAKE_BINARY_DIR}/cmake/ecto_ros/
-        DESTINATION ${CATKIN_PROJECT_SHARE_DESTINATION}/cmake
+install(DIRECTORY ${CATKIN_BUILD_PREFIX}/${CATKIN_PROJECT_SHARE_DESTINATION}/cmake
+        DESTINATION ${CATKIN_PROJECT_SHARE_DESTINATION}
         COMPONENT main
         USE_SOURCE_PERMISSIONS
 )
 
 # install the include folder
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ecto_ros
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ecto_ros/
         DESTINATION ${CATKIN_PROJECT_INCLUDE_DESTINATION}
         COMPONENT main
 )
