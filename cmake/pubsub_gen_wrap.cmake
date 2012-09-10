@@ -1,4 +1,6 @@
+if (ROS_GROOVY_OR_ABOVE_FOUND)
 include(CMakeParseArguments)
+endif()
 
 #attempts to set ENV variables so that ROS commands will work.
 #This appears to work well on linux, but may be questionable on
