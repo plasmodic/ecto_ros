@@ -1,11 +1,19 @@
 cmake_minimum_required(VERSION 2.8)
 project(ecto_ros)
 find_package(catkin REQUIRED)
+if (${catkin_VERSION} VERSION_GREATER "0.5.26")
+catkin_package()
+catkin_package_export(INCLUDE_DIRS include
+                      CFG_EXTRAS ecto_ros-extras.cmake
+)
+else()
 catkin_stack()
 catkin_project(ecto_ros
                INCLUDE_DIRS include
                CFG_EXTRAS ecto_ros-extras.cmake
 )
+endif()
+
 find_package(ecto REQUIRED)
 
 add_definitions(-Wno-strict-aliasing)
