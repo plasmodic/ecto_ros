@@ -28,7 +28,7 @@ endmacro()
 # Macro that builds default ecto cells for publishing/subscribing for a given
 # ROS package. If extra arguments are given, they must be the message names
 #
-# :param ROS_PACAKGE: the name of your ROS package to wrap module
+# :param ROS_PACKAGE: the name of your ROS package to wrap module
 # :param INSTALL: if given, it will also install the ecto module
 #                 you might not want to install test modules.
 # :param DESTINATION: the relative path where you want to install your ecto
@@ -73,6 +73,9 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     )
     if (${ROS_PACKAGE}_res)
       message(STATUS "pubsub_gen_wrap returned: " ${${ROS_PACKAGE}_res})
+    endif()
+    if (${ROS_PACKAGE}_err)
+      message(ERROR "pubsub_gen_wrap returned: " ${${ROS_PACKAGE}_err})
     endif()
     _unset_ros_env()
     separate_arguments(${ROS_PACKAGE}_srcs UNIX_COMMAND ${${ROS_PACKAGE}_srcs})
