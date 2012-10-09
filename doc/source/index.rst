@@ -1,3 +1,5 @@
+.. _ecto_ros:
+
 ecto_ros: ROS Integration & Bagfile Support
 ===========================================
 
