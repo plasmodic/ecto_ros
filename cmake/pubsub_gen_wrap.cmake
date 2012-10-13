@@ -39,17 +39,11 @@ endmacro()
 macro(pubsub_gen_wrap ROS_PACKAGE)
   cmake_parse_arguments(ARGS "INSTALL" "DESTINATION" "MESSAGES" ${ARGN})
 
-  # TODO remove the following after electric
-  if (ROS_ELECTRIC_FOUND)
-    find_ros_package(roscpp)
-    find_ros_package(rosbag)
-  else()
     if (ROS_FUERTE_FOUND)
     find_package(ROS REQUIRED gencpp genmsg roscpp rosbag)
     else()
     find_package(catkin REQUIRED gencpp genmsg roscpp rosbag)
     endif()
-  endif()
 
   find_program(ECTO_ROS_GEN_MSG_WRAPPERS
     gen_msg_wrappers.py
@@ -94,11 +88,7 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     message(STATUS "+ ${ROS_PACKAGE}: ${len} message types")
   endif()
 
-  if (ROS_ELECTRIC_FOUND)
-    find_ros_package(roscpp)
-  else()
-    find_package(roscpp REQUIRED)
-  endif()
+  find_package(roscpp REQUIRED)
   include_directories(SYSTEM
                       ${roscpp_INCLUDE_DIRS}
                       ${CMAKE_BINARY_DIR}/gen/cpp/${ROS_PACKAGE}

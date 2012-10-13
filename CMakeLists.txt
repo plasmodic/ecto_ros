@@ -17,8 +17,6 @@ find_package(ecto REQUIRED)
 
 add_definitions(-Wno-strict-aliasing)
 
-rosbuild_lite_init()
-
 include_directories(include)
 
 add_subdirectory(cmake)

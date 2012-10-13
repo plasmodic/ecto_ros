@@ -1,23 +1,12 @@
 find_package(OpenCV REQUIRED)
 
-# TODO remove the following after electric
-if (ROS_ELECTRIC_FOUND)
-    find_ros_package(rosbag)
-    find_ros_package(roscpp)
-    find_ros_package(eigen)
-    find_ros_package(geometry_msgs)
-    find_ros_package(nav_msgs)
-    find_ros_package(sensor_msgs)
-    find_ros_package(std_msgs)
-else()
     if (ROS_FUERTE_FOUND)
     find_package(ROS QUIET COMPONENTS geometry_msgs nav_msgs sensor_msgs std_msgs)
     find_package(ROS QUIET COMPONENTS rosbag roscpp)
     else()
-    find_package(catkin REQUIRED geometry_msgs nav_msgs sensor_msgs std_msgs)
-    find_package(catkin REQUIRED rosbag roscpp)
+find_package(catkin REQUIRED geometry_msgs nav_msgs sensor_msgs std_msgs)
+find_package(catkin REQUIRED rosbag roscpp)
     endif()
-endif()
 
 find_package(Eigen REQUIRED)
 
