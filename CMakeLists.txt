@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 2.8)
 project(ecto_ros)
-find_package(catkin REQUIRED)
+
+find_package(catkin REQUIRED geometry_msgs std_msgs)
 if (${catkin_VERSION} VERSION_GREATER "0.5.28")
-catkin_package(INCLUDE_DIRS include
+catkin_package(DEPENDS geometry_msgs std_msgs
                CFG_EXTRAS ecto_ros-extras.cmake
+               INCLUDE_DIRS include
 )
 else()
 catkin_stack()
