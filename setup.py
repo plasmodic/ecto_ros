@@ -1,9 +1,11 @@
 #!/usr/bin/env python
-from distutils.core import setup
 
-setup(name='ecto_ros',
-      version='0.3.0',
-      description='Ecto bindings for ROS',
-      packages=['ecto_ros'],
-      package_dir={'':'python'}
-)
+from distutils.core import setup
+from ecto.package import parse_package_for_distutils
+
+d = parse_package_for_distutils()
+d['packages'] = ['ecto_ros']
+d['package_dir'] = {'': 'python'}
+d['install_requires'] = []
+
+setup(**d)
