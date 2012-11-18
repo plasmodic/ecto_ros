@@ -29,7 +29,6 @@ except:
     d['maintainer_email'] = 'vrabaud@willowgarage.com'
     d['keywords'] = ['ROS']
 
-d = parse_package_for_distutils()
 d['packages'] = ['ecto_ros']
 d['package_dir'] = {'': 'python'}
 d['install_requires'] = []
