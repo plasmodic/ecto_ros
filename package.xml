@@ -8,7 +8,7 @@
   <license>BSD</license>
 
   <url>http://ecto.willowgarage.com/recognition</url>
-  <build_depend>catkin</build_depend>
+
   <build_depend>common_msgs</build_depend>
   <build_depend>ecto</build_depend>
   <build_depend>eigen</build_depend>
@@ -28,4 +28,6 @@
   <run_depend>opencv2</run_depend>
   <run_depend>ros_comm</run_depend>
   <run_depend>std_msgs</run_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
 </package>
