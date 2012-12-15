@@ -12,22 +12,20 @@
   <build_depend>common_msgs</build_depend>
   <build_depend>ecto</build_depend>
   <build_depend>eigen</build_depend>
-  <build_depend>genmsg</build_depend>
   <build_depend>geometry_msgs</build_depend>
-  <build_depend>langs</build_depend>
+  <build_depend>message_generation</build_depend>
   <build_depend>nav_msgs</build_depend>
   <build_depend>opencv2</build_depend>
   <build_depend>ros_comm</build_depend>
   <build_depend>std_msgs</build_depend>
 
-  <run_depend>common_msgs</run_depend>
   <run_depend>ecto</run_depend>
   <run_depend>eigen</run_depend>
-  <run_depend>geometry_msgs</run_depend>
-  <run_depend>nav_msgs</run_depend>
+  <!-- for the macro that generates publisher cells -->
+  <run_depend>message_generation</run_depend>
+  <run_depend>message_runtime</run_depend>
   <run_depend>opencv2</run_depend>
   <run_depend>ros_comm</run_depend>
-  <run_depend>std_msgs</run_depend>
 
   <buildtool_depend>catkin</buildtool_depend>
 </package>
