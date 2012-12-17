@@ -3,7 +3,7 @@ project(ecto_ros)
 
 find_package(catkin REQUIRED geometry_msgs std_msgs)
 if (${catkin_VERSION} VERSION_GREATER "0.5.28")
-catkin_package(DEPENDS geometry_msgs std_msgs
+catkin_package(CATKIN_DEPENDS geometry_msgs std_msgs
                CFG_EXTRAS ecto_ros-extras.cmake
                INCLUDE_DIRS include
 )
