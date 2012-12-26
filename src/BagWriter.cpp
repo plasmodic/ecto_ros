@@ -81,7 +81,7 @@ namespace ecto_ros
     void
     configure(const tendrils& p, const tendrils& in, const tendrils& out)
     {
-      ecto::py::scoped_call_back_to_python scb;
+      ECTO_SCOPED_CALLPYTHON();
 
       bp::object subs = p.get<bp::object>("baggers");
       bp::list l = bp::dict(subs).items();
