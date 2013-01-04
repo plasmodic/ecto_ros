@@ -40,8 +40,7 @@ def do_ecto():
     plasm.connect(graph)
     #ecto.view_plasm(plasm)
     
-    sched = ecto.schedulers.Singlethreaded(plasm)
-    sched.execute()
+    plasm.execute(niter=0)
     print "expecting count:", counts['/camera/rgb/image_color']
     print "RGB count:", counter_rgb.outputs.count
     print "Depth count:", counter_depth.outputs.count
