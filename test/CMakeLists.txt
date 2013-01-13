@@ -2,7 +2,7 @@ macro(pytest pyfile)
   string(REPLACE ";" " " args "${ARGN}")
 if (ROS_GROOVY_FOUND)
   add_test(ros_${pyfile}
-    ${CMAKE_CURRENT_SOURCE_DIR}/run_test.sh  ${CATKIN_BUILD_PREFIX}/setup.sh ${CMAKE_CURRENT_SOURCE_DIR}/${pyfile}.py ${args}
+    ${CMAKE_CURRENT_SOURCE_DIR}/run_test.sh  ${CATKIN_DEVEL_PREFIX}/setup.sh ${CMAKE_CURRENT_SOURCE_DIR}/${pyfile}.py ${args}
     )
 else()
   add_test(ros_${pyfile}
