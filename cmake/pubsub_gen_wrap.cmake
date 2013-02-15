@@ -39,11 +39,16 @@ endmacro()
 macro(pubsub_gen_wrap ROS_PACKAGE)
   cmake_parse_arguments(ARGS "INSTALL" "DESTINATION" "MESSAGES" ${ARGN})
 
+  # we can't use a find_package(catkin ...) to not override the catkin_LIBRARIES
+  find_package(ecto)
+  find_package(gencpp)
     if (ROS_FUERTE_FOUND)
-    find_package(ROS REQUIRED gencpp genmsg roscpp rosbag)
+    find_package(genmsg)
     else()
-    find_package(catkin REQUIRED gencpp message_generation roscpp rosbag)
+  find_package(message_generation)
     endif()
+  find_package(rosbag)
+  find_package(roscpp)
 
   find_program(ECTO_ROS_GEN_MSG_WRAPPERS
     gen_msg_wrappers.py
@@ -81,17 +86,15 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
   endif()
   find_package(${ROS_PACKAGE} QUIET)
 
-  include_directories(${ecto_ros_INCLUDE_DIRS})
-
   list(LENGTH ${ROS_PACKAGE}_srcs len)
   if(ROS_CONFIGURE_VERBOSE)
     message(STATUS "+ ${ROS_PACKAGE}: ${len} message types")
   endif()
 
-  find_package(roscpp REQUIRED)
-  include_directories(SYSTEM
-                      ${roscpp_INCLUDE_DIRS}
-                      ${CMAKE_BINARY_DIR}/gen/cpp/${ROS_PACKAGE}
+  include_directories(SYSTEM ${ecto_INCLUDE_DIRS}
+                             ${ecto_ros_INCLUDE_DIRS}
+                             ${roscpp_INCLUDE_DIRS}
+                             ${CMAKE_BINARY_DIR}/gen/cpp/${ROS_PACKAGE}
   )
   if (ARGS_INSTALL)
     ectomodule(ecto_${ROS_PACKAGE} DESTINATION ${ARGS_DESTINATION}
@@ -103,11 +106,11 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
                                    ${${ROS_PACKAGE}_srcs}
     )
   endif()
-  link_ecto(ecto_${ROS_PACKAGE}
-    ${roscpp_LIBRARIES}
-    ${rosbag_LIBRARIES}
-    ${${ROS_PACKAGE}_LIBRARIES}
-    )
+  link_ecto(ecto_${ROS_PACKAGE} ${ecto_LIBRARIES}
+                                ${rosbag_LIBRARIES}
+                                ${roscpp_LIBRARIES}
+                                ${${ROS_PACKAGE}_LIBRARIES}
+  )
   set_target_properties(ecto_${ROS_PACKAGE}_ectomodule
     PROPERTIES INSTALL_RPATH_USE_LINK_PATH TRUE
     )

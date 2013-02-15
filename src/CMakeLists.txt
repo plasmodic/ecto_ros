@@ -1,16 +1,7 @@
 find_package(OpenCV REQUIRED)
-
-    if (ROS_FUERTE_FOUND)
-    find_package(ROS QUIET COMPONENTS geometry_msgs nav_msgs sensor_msgs std_msgs)
-    find_package(ROS QUIET COMPONENTS rosbag roscpp)
-    else()
-find_package(catkin REQUIRED geometry_msgs nav_msgs sensor_msgs std_msgs)
-find_package(catkin REQUIRED rosbag roscpp)
-    endif()
-
 find_package(Eigen REQUIRED)
 
-include_directories(SYSTEM
+include_directories(SYSTEM ${catkin_INCLUDE_DIRS}
                     ${Eigen_INCLUDE_DIRS}
                     ${ROS_INCLUDE_DIRS}
 )
