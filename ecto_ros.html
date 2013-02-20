@@ -1,0 +1,462 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ecto_ros ROS utility cells &mdash; ecto_ros</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ecto_ros" href="index.html" />
+    <link rel="next" title="ecto_std_msgs" href="std_msgs.html" />
+    <link rel="prev" title="ecto_ros: ROS Integration &amp; Bagfile Support" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="std_msgs.html" title="ecto_std_msgs"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="ecto_ros: ROS Integration &amp; Bagfile Support"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">ecto_ros</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">ecto_ros: ROS Integration &amp; Bagfile Support</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="std_msgs.html"
+                        title="next chapter">ecto_std_msgs</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/ecto_ros.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="ecto-ros-ros-utility-cells">
+<h1><tt class="docutils literal"><span class="pre">ecto_ros</span></tt> ROS utility cells<a class="headerlink" href="#ecto-ros-ros-utility-cells" title="Permalink to this headline">¶</a></h1>
+<h1>ecto_ros<a class="headerlink" href="#ecto-ros-ros-utility-cells" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="BagReader">
+<span id="index-0"></span><span id="ecto_ros.BagReader"></span><h2>BagReader<a class="headerlink" href="#BagReader" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>BagReader reads bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bag</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">foo.bag</span></tt></p>
+<p>The bag filename.</p>
+</li>
+<li><p class="first"><strong>baggers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::python::api::object</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> no default value</em></p>
+<p>A python dict Bagger_MessageT objects.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="DriftPrinter">
+<span id="index-1"></span><span id="ecto_ros.DriftPrinter"></span><h2>DriftPrinter<a class="headerlink" href="#DriftPrinter" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Prints timing drift. For image,depth,camera_infos.</p>
+</p>
+<p></p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>depth</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Image_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p></p>
+</li>
+<li><p class="first"><strong>depth_info</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::CameraInfo_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p></p>
+</li>
+<li><p class="first"><strong>image</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Image_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p></p>
+</li>
+<li><p class="first"><strong>image_info</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::CameraInfo_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p></p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="BagWriter">
+<span id="index-2"></span><span id="ecto_ros.BagWriter"></span><h2>BagWriter<a class="headerlink" href="#BagWriter" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>BagWriter writes bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bag</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">foo.bag</span></tt></p>
+<p>The bag filename.</p>
+</li>
+<li><p class="first"><strong>baggers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::python::api::object</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> no default value</em></p>
+<p>A python dict Bagger_MessageT objects.</p>
+</li>
+<li><p class="first"><strong>compressed</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Use compresion?</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Mat2Image">
+<span id="index-3"></span><span id="ecto_ros.Mat2Image"></span><h2>Mat2Image<a class="headerlink" href="#Mat2Image" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Converts an cv::Mat to Image message type.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>encoding</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> no default value</em></p>
+<p>ROS image message encoding override.</p>
+</li>
+<li><p class="first"><strong>frame_id</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">default_frame</span></tt></p>
+<p>Frame this data is associated with</p>
+</li>
+<li><p class="first"><strong>swap_rgb</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Swap the red and blue channels</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>image</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">cv::Mat</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>A cv::Mat.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>image</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Image_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>A sensor_msg::Image message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Mat2PointCloud2">
+<span id="index-4"></span><span id="ecto_ros.Mat2PointCloud2"></span><h2>Mat2PointCloud2<a class="headerlink" href="#Mat2PointCloud2" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Converts an cv::Mat to PointCloud2.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>frame_id</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">default_frame</span></tt></p>
+<p>Frame this data is associated with</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>image</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">cv::Mat</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>A cv::Mat.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>cloud</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::PointCloud2_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>A sensor_msg::PointCloud2 message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="PointCloud2DepthImage">
+<span id="index-5"></span><span id="ecto_ros.PointCloud2DepthImage"></span><h2>PointCloud2DepthImage<a class="headerlink" href="#PointCloud2DepthImage" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Converts a PointCloud to a depth Image message type.</p>
+</p>
+<p></p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>cloud</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::PointCloud_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>A sensor_msg::PointCloud2 message.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>image</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Image_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>A cv::Mat with only one channel for the depth.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="RT2PoseStamped">
+<span id="index-6"></span><span id="ecto_ros.RT2PoseStamped"></span><h2>RT2PoseStamped<a class="headerlink" href="#RT2PoseStamped" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Takes an R and T cv::Mat style and emits a stamped pose.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>frame_id</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> no default value</em></p>
+<p>The frame id that generated the pose.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>R</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">cv::Mat</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>3X3 Rotation matrix.</p>
+</li>
+<li><p class="first"><strong>T</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">cv::Mat</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>3X1 Translation vector.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>pose</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;geometry_msgs::PoseStamped_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>A geometry_msgs::PoseStamped.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="PointCloud22DepthImage">
+<span id="index-7"></span><span id="ecto_ros.PointCloud22DepthImage"></span><h2>PointCloud22DepthImage<a class="headerlink" href="#PointCloud22DepthImage" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Converts a PointCloud2 to a depth Image message type.</p>
+</p>
+<p></p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>cloud</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::PointCloud2_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>A sensor_msg::PointCloud2 message.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>image</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Image_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>A cv::Mat with only one channel for the depth.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Image2Mat">
+<span id="index-8"></span><span id="ecto_ros.Image2Mat"></span><h2>Image2Mat<a class="headerlink" href="#Image2Mat" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Converts an Image message to cv::Mat type.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>swap_rgb</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Swap the red and blue channels</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>image</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Image_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>A sensor_msg::Image message from ros.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>image</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">cv::Mat</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>A cv::Mat copy.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Synchronizer">
+<span id="index-9"></span><span id="ecto_ros.Synchronizer"></span><h2>Synchronizer<a class="headerlink" href="#Synchronizer" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Synchronizer synchronizes.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>subs</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::python::api::object</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> no default value</em></p>
+<p>A python dict ecto_Message_subscriber</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="CameraInfo2Cv">
+<span id="index-10"></span><span id="ecto_ros.CameraInfo2Cv"></span><h2>CameraInfo2Cv<a class="headerlink" href="#CameraInfo2Cv" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Takes a CameraInfo message and converts to OpenCV types.</p>
+</p>
+<p></p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>camera_info</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::CameraInfo_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p></p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>D</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">cv::Mat</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p></p>
+</li>
+<li><p class="first"><strong>K</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">cv::Mat</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p></p>
+</li>
+<li><p class="first"><strong>image_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">cv::Size_&lt;int&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p></p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="PoseStamped2RT">
+<span id="index-11"></span><span id="ecto_ros.PoseStamped2RT"></span><h2>PoseStamped2RT<a class="headerlink" href="#PoseStamped2RT" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Takes a geometry_msgs::PoseStamped and turn it into a cv::Mat R and T.</p>
+</p>
+<p></p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>pose</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;geometry_msgs::PoseStamped_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>A geometry_msgs::PoseStamped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>R</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">cv::Mat</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>3X3 Rotation matrix.</p>
+</li>
+<li><p class="first"><strong>T</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">cv::Mat</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>3X1 Translation vector.</p>
+</li>
+<li><p class="first"><strong>frame_id</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The frame id of the pose.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Mat2PointCloud">
+<span id="index-12"></span><span id="ecto_ros.Mat2PointCloud"></span><h2>Mat2PointCloud<a class="headerlink" href="#Mat2PointCloud" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Converts an cv::Mat to PointCloud.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>frame_id</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">default_frame</span></tt></p>
+<p>Frame this data is associated with</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>image</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">cv::Mat</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>A cv::Mat.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>cloud</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::PointCloud_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>A sensor_msg::PointCloud2 message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Cv2CameraInfo">
+<span id="index-13"></span><span id="ecto_ros.Cv2CameraInfo"></span><h2>Cv2CameraInfo<a class="headerlink" href="#Cv2CameraInfo" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Takes opencv style camera info, and converts to an CameraInfo message.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>frame_id</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> no default value</em></p>
+<p></p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>D</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">cv::Mat</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p></p>
+</li>
+<li><p class="first"><strong>K</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">cv::Mat</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p></p>
+</li>
+<li><p class="first"><strong>image_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">cv::Size_&lt;int&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p></p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>camera_info</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::CameraInfo_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p></p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="std_msgs.html" title="ecto_std_msgs"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="ecto_ros: ROS Integration &amp; Bagfile Support"
+             >previous</a> |</li>
+        <li><a href="index.html">ecto_ros</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012,  Willow Garage, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

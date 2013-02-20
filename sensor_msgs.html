@@ -1,0 +1,1864 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ecto_sensor_msgs &mdash; ecto_ros</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ecto_ros" href="index.html" />
+    <link rel="next" title="ecto_geometry_msgs" href="geometry_msgs.html" />
+    <link rel="prev" title="ecto_std_msgs" href="std_msgs.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="geometry_msgs.html" title="ecto_geometry_msgs"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="std_msgs.html" title="ecto_std_msgs"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">ecto_ros</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="std_msgs.html"
+                        title="previous chapter">ecto_std_msgs</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="geometry_msgs.html"
+                        title="next chapter">ecto_geometry_msgs</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/sensor_msgs.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="ecto-sensor-msgs">
+<h1>ecto_sensor_msgs<a class="headerlink" href="#ecto-sensor-msgs" title="Permalink to this headline">¶</a></h1>
+<p>ROS ecto cells that deal with <tt class="docutils literal"><span class="pre">sensor_msgs</span></tt> messages.</p>
+<h1>ecto_ros.ecto_sensor_msgs<a class="headerlink" href="#ecto-sensor-msgs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Bagger_ChannelFloat32">
+<span id="index-0"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_ChannelFloat32"></span><h2>Bagger_ChannelFloat32<a class="headerlink" href="#Bagger_ChannelFloat32" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_MultiEchoLaserScan">
+<span id="index-1"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_MultiEchoLaserScan"></span><h2>Bagger_MultiEchoLaserScan<a class="headerlink" href="#Bagger_MultiEchoLaserScan" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_MultiEchoLaserScan">
+<span id="index-2"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_MultiEchoLaserScan"></span><h2>Subscriber_MultiEchoLaserScan<a class="headerlink" href="#Subscriber_MultiEchoLaserScan" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::MultiEchoLaserScan.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::MultiEchoLaserScan_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Publisher_JoyFeedbackArray">
+<span id="index-3"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_JoyFeedbackArray"></span><h2>Publisher_JoyFeedbackArray<a class="headerlink" href="#Publisher_JoyFeedbackArray" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::JoyFeedbackArray.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::JoyFeedbackArray_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Publisher_RegionOfInterest">
+<span id="index-4"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_RegionOfInterest"></span><h2>Publisher_RegionOfInterest<a class="headerlink" href="#Publisher_RegionOfInterest" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::RegionOfInterest.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::RegionOfInterest_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_MagneticField">
+<span id="index-5"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_MagneticField"></span><h2>Subscriber_MagneticField<a class="headerlink" href="#Subscriber_MagneticField" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::MagneticField.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::MagneticField_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Subscriber_NavSatStatus">
+<span id="index-6"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_NavSatStatus"></span><h2>Subscriber_NavSatStatus<a class="headerlink" href="#Subscriber_NavSatStatus" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::NavSatStatus.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::NavSatStatus_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Bagger_PointCloud2">
+<span id="index-7"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_PointCloud2"></span><h2>Bagger_PointCloud2<a class="headerlink" href="#Bagger_PointCloud2" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Publisher_JointState">
+<span id="index-8"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_JointState"></span><h2>Publisher_JointState<a class="headerlink" href="#Publisher_JointState" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::JointState.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::JointState_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_CameraInfo">
+<span id="index-9"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_CameraInfo"></span><h2>Subscriber_CameraInfo<a class="headerlink" href="#Subscriber_CameraInfo" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::CameraInfo.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::CameraInfo_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Bagger_TimeReference">
+<span id="index-10"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_TimeReference"></span><h2>Bagger_TimeReference<a class="headerlink" href="#Bagger_TimeReference" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Publisher_RelativeHumidity">
+<span id="index-11"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_RelativeHumidity"></span><h2>Publisher_RelativeHumidity<a class="headerlink" href="#Publisher_RelativeHumidity" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::RelativeHumidity.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::RelativeHumidity_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Publisher_Imu">
+<span id="index-12"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_Imu"></span><h2>Publisher_Imu<a class="headerlink" href="#Publisher_Imu" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::Imu.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Imu_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_JoyFeedback">
+<span id="index-13"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_JoyFeedback"></span><h2>Bagger_JoyFeedback<a class="headerlink" href="#Bagger_JoyFeedback" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_JoyFeedbackArray">
+<span id="index-14"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_JoyFeedbackArray"></span><h2>Subscriber_JoyFeedbackArray<a class="headerlink" href="#Subscriber_JoyFeedbackArray" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::JoyFeedbackArray.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::JoyFeedbackArray_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Publisher_TimeReference">
+<span id="index-15"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_TimeReference"></span><h2>Publisher_TimeReference<a class="headerlink" href="#Publisher_TimeReference" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::TimeReference.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::TimeReference_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_Illuminance">
+<span id="index-16"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_Illuminance"></span><h2>Subscriber_Illuminance<a class="headerlink" href="#Subscriber_Illuminance" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::Illuminance.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Illuminance_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Publisher_LaserScan">
+<span id="index-17"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_LaserScan"></span><h2>Publisher_LaserScan<a class="headerlink" href="#Publisher_LaserScan" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::LaserScan.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::LaserScan_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_ChannelFloat32">
+<span id="index-18"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_ChannelFloat32"></span><h2>Subscriber_ChannelFloat32<a class="headerlink" href="#Subscriber_ChannelFloat32" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::ChannelFloat32.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::ChannelFloat32_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Publisher_CameraInfo">
+<span id="index-19"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_CameraInfo"></span><h2>Publisher_CameraInfo<a class="headerlink" href="#Publisher_CameraInfo" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::CameraInfo.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::CameraInfo_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_PointCloud">
+<span id="index-20"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_PointCloud"></span><h2>Bagger_PointCloud<a class="headerlink" href="#Bagger_PointCloud" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Publisher_Joy">
+<span id="index-21"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_Joy"></span><h2>Publisher_Joy<a class="headerlink" href="#Publisher_Joy" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::Joy.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Joy_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_CameraInfo">
+<span id="index-22"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_CameraInfo"></span><h2>Bagger_CameraInfo<a class="headerlink" href="#Bagger_CameraInfo" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_CompressedImage">
+<span id="index-23"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_CompressedImage"></span><h2>Bagger_CompressedImage<a class="headerlink" href="#Bagger_CompressedImage" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_RegionOfInterest">
+<span id="index-24"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_RegionOfInterest"></span><h2>Bagger_RegionOfInterest<a class="headerlink" href="#Bagger_RegionOfInterest" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_Image">
+<span id="index-25"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_Image"></span><h2>Subscriber_Image<a class="headerlink" href="#Subscriber_Image" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::Image.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Image_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Subscriber_JoyFeedback">
+<span id="index-26"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_JoyFeedback"></span><h2>Subscriber_JoyFeedback<a class="headerlink" href="#Subscriber_JoyFeedback" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::JoyFeedback.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::JoyFeedback_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Publisher_PointField">
+<span id="index-27"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_PointField"></span><h2>Publisher_PointField<a class="headerlink" href="#Publisher_PointField" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::PointField.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::PointField_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_RegionOfInterest">
+<span id="index-28"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_RegionOfInterest"></span><h2>Subscriber_RegionOfInterest<a class="headerlink" href="#Subscriber_RegionOfInterest" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::RegionOfInterest.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::RegionOfInterest_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Subscriber_FluidPressure">
+<span id="index-29"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_FluidPressure"></span><h2>Subscriber_FluidPressure<a class="headerlink" href="#Subscriber_FluidPressure" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::FluidPressure.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::FluidPressure_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Publisher_ChannelFloat32">
+<span id="index-30"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_ChannelFloat32"></span><h2>Publisher_ChannelFloat32<a class="headerlink" href="#Publisher_ChannelFloat32" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::ChannelFloat32.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::ChannelFloat32_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_PointField">
+<span id="index-31"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_PointField"></span><h2>Subscriber_PointField<a class="headerlink" href="#Subscriber_PointField" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::PointField.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::PointField_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Subscriber_PointCloud2">
+<span id="index-32"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_PointCloud2"></span><h2>Subscriber_PointCloud2<a class="headerlink" href="#Subscriber_PointCloud2" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::PointCloud2.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::PointCloud2_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Publisher_FluidPressure">
+<span id="index-33"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_FluidPressure"></span><h2>Publisher_FluidPressure<a class="headerlink" href="#Publisher_FluidPressure" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::FluidPressure.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::FluidPressure_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_PointField">
+<span id="index-34"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_PointField"></span><h2>Bagger_PointField<a class="headerlink" href="#Bagger_PointField" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Publisher_Image">
+<span id="index-35"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_Image"></span><h2>Publisher_Image<a class="headerlink" href="#Publisher_Image" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::Image.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Image_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_Range">
+<span id="index-36"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Range"></span><h2>Bagger_Range<a class="headerlink" href="#Bagger_Range" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_NavSatFix">
+<span id="index-37"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_NavSatFix"></span><h2>Bagger_NavSatFix<a class="headerlink" href="#Bagger_NavSatFix" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Publisher_PointCloud2">
+<span id="index-38"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_PointCloud2"></span><h2>Publisher_PointCloud2<a class="headerlink" href="#Publisher_PointCloud2" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::PointCloud2.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::PointCloud2_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Publisher_MultiEchoLaserScan">
+<span id="index-39"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_MultiEchoLaserScan"></span><h2>Publisher_MultiEchoLaserScan<a class="headerlink" href="#Publisher_MultiEchoLaserScan" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::MultiEchoLaserScan.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::MultiEchoLaserScan_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_LaserEcho">
+<span id="index-40"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_LaserEcho"></span><h2>Bagger_LaserEcho<a class="headerlink" href="#Bagger_LaserEcho" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Publisher_LaserEcho">
+<span id="index-41"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_LaserEcho"></span><h2>Publisher_LaserEcho<a class="headerlink" href="#Publisher_LaserEcho" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::LaserEcho.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::LaserEcho_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Publisher_PointCloud">
+<span id="index-42"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_PointCloud"></span><h2>Publisher_PointCloud<a class="headerlink" href="#Publisher_PointCloud" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::PointCloud.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::PointCloud_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Publisher_NavSatStatus">
+<span id="index-43"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_NavSatStatus"></span><h2>Publisher_NavSatStatus<a class="headerlink" href="#Publisher_NavSatStatus" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::NavSatStatus.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::NavSatStatus_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_NavSatFix">
+<span id="index-44"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_NavSatFix"></span><h2>Subscriber_NavSatFix<a class="headerlink" href="#Subscriber_NavSatFix" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::NavSatFix.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::NavSatFix_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Subscriber_CompressedImage">
+<span id="index-45"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_CompressedImage"></span><h2>Subscriber_CompressedImage<a class="headerlink" href="#Subscriber_CompressedImage" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::CompressedImage.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::CompressedImage_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Bagger_FluidPressure">
+<span id="index-46"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_FluidPressure"></span><h2>Bagger_FluidPressure<a class="headerlink" href="#Bagger_FluidPressure" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_RelativeHumidity">
+<span id="index-47"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_RelativeHumidity"></span><h2>Subscriber_RelativeHumidity<a class="headerlink" href="#Subscriber_RelativeHumidity" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::RelativeHumidity.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::RelativeHumidity_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Publisher_Range">
+<span id="index-48"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_Range"></span><h2>Publisher_Range<a class="headerlink" href="#Publisher_Range" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::Range.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Range_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_Illuminance">
+<span id="index-49"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Illuminance"></span><h2>Bagger_Illuminance<a class="headerlink" href="#Bagger_Illuminance" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Publisher_JoyFeedback">
+<span id="index-50"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_JoyFeedback"></span><h2>Publisher_JoyFeedback<a class="headerlink" href="#Publisher_JoyFeedback" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::JoyFeedback.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::JoyFeedback_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_TimeReference">
+<span id="index-51"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_TimeReference"></span><h2>Subscriber_TimeReference<a class="headerlink" href="#Subscriber_TimeReference" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::TimeReference.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::TimeReference_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Subscriber_PointCloud">
+<span id="index-52"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_PointCloud"></span><h2>Subscriber_PointCloud<a class="headerlink" href="#Subscriber_PointCloud" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::PointCloud.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::PointCloud_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Publisher_NavSatFix">
+<span id="index-53"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_NavSatFix"></span><h2>Publisher_NavSatFix<a class="headerlink" href="#Publisher_NavSatFix" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::NavSatFix.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::NavSatFix_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Publisher_CompressedImage">
+<span id="index-54"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_CompressedImage"></span><h2>Publisher_CompressedImage<a class="headerlink" href="#Publisher_CompressedImage" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::CompressedImage.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::CompressedImage_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_NavSatStatus">
+<span id="index-55"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_NavSatStatus"></span><h2>Bagger_NavSatStatus<a class="headerlink" href="#Bagger_NavSatStatus" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_LaserScan">
+<span id="index-56"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_LaserScan"></span><h2>Subscriber_LaserScan<a class="headerlink" href="#Subscriber_LaserScan" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::LaserScan.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::LaserScan_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Bagger_JoyFeedbackArray">
+<span id="index-57"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_JoyFeedbackArray"></span><h2>Bagger_JoyFeedbackArray<a class="headerlink" href="#Bagger_JoyFeedbackArray" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_JointState">
+<span id="index-58"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_JointState"></span><h2>Subscriber_JointState<a class="headerlink" href="#Subscriber_JointState" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::JointState.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::JointState_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Publisher_MagneticField">
+<span id="index-59"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_MagneticField"></span><h2>Publisher_MagneticField<a class="headerlink" href="#Publisher_MagneticField" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::MagneticField.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::MagneticField_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_Image">
+<span id="index-60"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Image"></span><h2>Bagger_Image<a class="headerlink" href="#Bagger_Image" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_RelativeHumidity">
+<span id="index-61"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_RelativeHumidity"></span><h2>Bagger_RelativeHumidity<a class="headerlink" href="#Bagger_RelativeHumidity" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_Temperature">
+<span id="index-62"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Temperature"></span><h2>Bagger_Temperature<a class="headerlink" href="#Bagger_Temperature" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_Joy">
+<span id="index-63"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Joy"></span><h2>Bagger_Joy<a class="headerlink" href="#Bagger_Joy" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_JointState">
+<span id="index-64"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_JointState"></span><h2>Bagger_JointState<a class="headerlink" href="#Bagger_JointState" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_Imu">
+<span id="index-65"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_Imu"></span><h2>Subscriber_Imu<a class="headerlink" href="#Subscriber_Imu" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::Imu.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Imu_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Bagger_MagneticField">
+<span id="index-66"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_MagneticField"></span><h2>Bagger_MagneticField<a class="headerlink" href="#Bagger_MagneticField" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Bagger_LaserScan">
+<span id="index-67"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_LaserScan"></span><h2>Bagger_LaserScan<a class="headerlink" href="#Bagger_LaserScan" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_Range">
+<span id="index-68"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_Range"></span><h2>Subscriber_Range<a class="headerlink" href="#Subscriber_Range" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::Range.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Range_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Publisher_Temperature">
+<span id="index-69"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_Temperature"></span><h2>Publisher_Temperature<a class="headerlink" href="#Publisher_Temperature" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::Temperature.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Temperature_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Publisher_Illuminance">
+<span id="index-70"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_Illuminance"></span><h2>Publisher_Illuminance<a class="headerlink" href="#Publisher_Illuminance" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::Illuminance.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Illuminance_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="Subscriber_LaserEcho">
+<span id="index-71"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_LaserEcho"></span><h2>Subscriber_LaserEcho<a class="headerlink" href="#Subscriber_LaserEcho" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::LaserEcho.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::LaserEcho_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Subscriber_Temperature">
+<span id="index-72"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_Temperature"></span><h2>Subscriber_Temperature<a class="headerlink" href="#Subscriber_Temperature" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::Temperature.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Temperature_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Subscriber_Joy">
+<span id="index-73"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_Joy"></span><h2>Subscriber_Joy<a class="headerlink" href="#Subscriber_Joy" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::Joy.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::Joy_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
+<div class="section" id="Bagger_Imu">
+<span id="index-74"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Imu"></span><h2>Bagger_Imu<a class="headerlink" href="#Bagger_Imu" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="geometry_msgs.html" title="ecto_geometry_msgs"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="std_msgs.html" title="ecto_std_msgs"
+             >previous</a> |</li>
+        <li><a href="index.html">ecto_ros</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012,  Willow Garage, Inc.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
