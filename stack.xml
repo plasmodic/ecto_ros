@@ -8,7 +8,7 @@
   <license>BSD</license>
   <copyright>WIllow Garage</copyright>
 
-  <url>http://ecto.willowgarage.com/recognition</url>
+  <url>http://plasmodic.github.io/ecto_ros</url>
   <build_depends>catkin</build_depends>
   <build_depends>common_msgs</build_depends>
   <build_depends>ecto</build_depends>
