@@ -1,6 +1,4 @@
-if (ROS_GROOVY_OR_ABOVE_FOUND)
 include(CMakeParseArguments)
-endif()
 
 #attempts to set ENV variables so that ROS commands will work.
 #This appears to work well on linux, but may be questionable on
@@ -42,11 +40,7 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
   # we can't use a find_package(catkin ...) to not override the catkin_LIBRARIES
   find_package(ecto)
   find_package(gencpp)
-    if (ROS_FUERTE_FOUND)
-    find_package(genmsg)
-    else()
   find_package(message_generation)
-    endif()
   find_package(rosbag)
   find_package(roscpp)
 
