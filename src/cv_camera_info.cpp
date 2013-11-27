@@ -46,34 +46,23 @@ namespace ecto_ros
     static void
     declare_io(const tendrils& /*p*/, tendrils& i, tendrils& o)
     {
-      i.declare<CameraInfoConstPtr>("camera_info");
-      o.declare<cv::Mat>("K");
-      o.declare<cv::Mat>("D");
-      o.declare<cv::Size>("image_size");
-    }
-    void
-    configure(const tendrils& p, const tendrils& i, const tendrils& o)
-    {
-      camera_info_ = i["camera_info"];
-      K_ = o["K"];
-      D_ = o["D"];
-      image_size_ = o["image_size"];
+      i.declare(&CameraInfo2Cv::camera_info_, "camera_info");
+
+      o.declare(&CameraInfo2Cv::K_, "K");
+      o.declare(&CameraInfo2Cv::D_, "D");
+      o.declare(&CameraInfo2Cv::image_size_,"image_size");
     }
     int
     process(const tendrils&, const tendrils&)
     {
       CameraInfo ci = **camera_info_;
-      cv::Mat K(3, 3, CV_64FC1);
+      *K_ = cv::Mat(3, 3, CV_32FC1);
       for (int i = 0; i < 9; i++)
-        K.at<double>(i / 3, i % 3) = ci.K[i];
-      cv::Mat D(ci.D.size(), 1, CV_64FC1);
+        K_->at<float>(i / 3, i % 3) = ci.K[i];
+      *D_ = cv::Mat(ci.D.size(), 1, CV_32FC1);
       for (size_t i = 0; i < ci.D.size(); i++)
-      {
-        D.at<double>(i) = ci.D[i];
-      }
-      cv::Size s(ci.width, ci.height);
-      *image_size_ = s;
-      *K_ = K;
+        D_->at<float>(i) = ci.D[i];
+      *image_size_ = cv::Size(ci.width, ci.height);
       return ecto::OK;
     }
     ecto::spore<CameraInfoConstPtr> camera_info_;
