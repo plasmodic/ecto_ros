@@ -5,19 +5,17 @@ macro(pytest pyfile)
     )
 endmacro()
 
-macro(data_download PATH_VAR DATA_FILE)
-  set(data_base_url http://vault.willowgarage.com/wgdata1/vol1/ecto_data)
-  set(${PATH_VAR} ${PROJECT_BINARY_DIR}/data/${DATA_FILE})
-  if(NOT EXISTS ${${PATH_VAR}})
-    message(STATUS "Data fetch.\n** Downloading:\n** ${data_base_url}/${DATA_FILE}\n** to:\n** ${${PATH_VAR}}")
-    file(DOWNLOAD ${data_base_url}/${DATA_FILE} ${${PATH_VAR}})
-  endif()
-endmacro()
-
-data_download(T01 t01.bag)
-pytest(test_bag ${T01} )
+if (CATKIN_ENABLE_TESTING)
+  catkin_download_test_data(
+    ${PROJECT_NAME}_t01.bag
+    http://vault.willowgarage.com/wgdata1/vol1/ecto_data/t01.bag
+    DESTINATION ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION}/tests
+  )
+  set(T01 ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION}/tests/t01.bag)
+  pytest(test_bag ${T01})
 #pytest(test_sync_sub ${T01} ) 
 #pytest(test_image_sub ${T01} )
 #pytest(test_image_sub_threadpool ${T01} )
 #pytest(test_reinit ${T01} )
 #pytest(test_reinit_threadpool ${T01} )
+endif()
