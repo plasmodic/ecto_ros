@@ -2,8 +2,8 @@
 Changelog for package ecto_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.4.0 (2014-03-04)
+------------------
 * add rosmsg dependency for message generation
 * use proper catkin to download test data
 * remove stack.xml now that Fuerte is dropped
