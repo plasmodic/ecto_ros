@@ -2,8 +2,8 @@
 Changelog for package ecto_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.4.1 (2014-03-10)
+------------------
 * fix farm errors on Indigo
 * Contributors: Vincent Rabaud
 
