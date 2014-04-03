@@ -2,6 +2,11 @@
 Changelog for package ecto_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fixes `#2 <https://github.com/plasmodic/ecto_ros/issues/2>`_
+* Contributors: Vincent Rabaud
+
 0.4.1 (2014-03-10)
 ------------------
 * fix farm errors on Indigo
