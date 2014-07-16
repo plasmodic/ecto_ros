@@ -57,7 +57,7 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
 
   if(NOT ${ROS_PACKAGE}_srcs)
     _set_ros_env()
-    execute_process(COMMAND ${ECTO_ROS_GEN_MSG_WRAPPERS} ${ARGN_CLEAN}
+    execute_process(COMMAND ${CATKIN_ENV} ${ECTO_ROS_GEN_MSG_WRAPPERS} ${ARGN_CLEAN}
       OUTPUT_VARIABLE ${ROS_PACKAGE}_srcs
       ERROR_VARIABLE ${ROS_PACKAGE}_err
       RESULT_VARIABLE ${ROS_PACKAGE}_res
