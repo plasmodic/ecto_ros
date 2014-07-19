@@ -1,7 +1,7 @@
 find_package(OpenCV REQUIRED)
 find_package(Eigen REQUIRED)
 
-include_directories(SYSTEM ${catkin_INCLUDE_DIRS}
+include_directories(${catkin_INCLUDE_DIRS}
                     ${Eigen_INCLUDE_DIRS}
                     ${ROS_INCLUDE_DIRS}
 )
