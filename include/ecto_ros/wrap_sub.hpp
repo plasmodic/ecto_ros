@@ -61,7 +61,7 @@ namespace ecto_ros
     {
       //look up remapping
       std::string topic = nh_.resolveName(topic_, true);
-      sub_ = nh_.subscribe(topic, 1, &Subscriber::dataCallback, this);
+      sub_ = nh_.subscribe(topic, queue_size_, &Subscriber::dataCallback, this);
       ROS_INFO_STREAM("Subscribed to topic:" << topic << " with queue size of " << queue_size_);
     }
 
