@@ -2,6 +2,15 @@
 Changelog for package ecto_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Actually apply the queue size
+* cleanup tests and dot not depend on vault.willowgarage.com
+* Actually apply the queue size
+* remove usage of SYSTEM in include_directories.
+* don't rely on the user setting up the catkin environment for the script.
+* Contributors: Daniel Stonier, Vincent Rabaud
+
 0.4.2 (2014-04-03)
 ------------------
 * fixes `#2 <https://github.com/plasmodic/ecto_ros/issues/2>`_
