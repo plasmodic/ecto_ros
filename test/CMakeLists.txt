@@ -6,16 +6,12 @@ macro(pytest pyfile)
 endmacro()
 
 if (CATKIN_ENABLE_TESTING)
-  catkin_download_test_data(
-    ${PROJECT_NAME}_t01.bag
-    http://vault.willowgarage.com/wgdata1/vol1/ecto_data/t01.bag
+  file(COPY t01.bag
     DESTINATION ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION}/tests
   )
   set(T01 ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION}/tests/t01.bag)
-  pytest(test_bag ${T01})
+#  pytest(test_bag ${T01})
 #pytest(test_sync_sub ${T01} ) 
 #pytest(test_image_sub ${T01} )
-#pytest(test_image_sub_threadpool ${T01} )
 #pytest(test_reinit ${T01} )
-#pytest(test_reinit_threadpool ${T01} )
 endif()
