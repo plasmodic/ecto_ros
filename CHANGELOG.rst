@@ -2,8 +2,8 @@
 Changelog for package ecto_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.4.3 (2014-07-27)
+------------------
 * Actually apply the queue size
 * cleanup tests and dot not depend on vault.willowgarage.com
 * Actually apply the queue size
