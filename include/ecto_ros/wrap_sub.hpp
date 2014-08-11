@@ -112,13 +112,16 @@ namespace ecto_ros
     process(const ecto::tendrils& in, const ecto::tendrils& out)
     {
       sub_thread_.join();
-      //condition variable idiom, blocks until the data has
-      //been filled by ros.
+      //condition variable idiom, blocks until the data has been filled by ros.
+      unsigned int counter = 0;
       boost::unique_lock<boost::mutex> lock(mut_);
       while (queue_.empty())
       {
         boost::this_thread::interruption_point();
         cond_.timed_wait(lock,boost::posix_time::millisec(5));
+        if ( counter++ > 40 )  {
+          return ecto::DO_OVER; // give the scheduler a chance to manage (e.g. abort)
+        }
       }
       *out_ = queue_.front();
       queue_.pop_front();
