@@ -88,8 +88,9 @@ namespace ecto_ros
     int
     process(const ecto::tendrils& in, const ecto::tendrils& out)
     {
-      if(*in_)
+      if(*in_ && (pub_.getNumSubscribers() != 0)) {
         pub_.publish(**in_);
+      }
       return ecto::OK;
     }
   };
