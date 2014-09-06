@@ -2,8 +2,8 @@
 Changelog for package ecto_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.4.4 (2014-09-06)
+------------------
 * Merge pull request `#10 <https://github.com/plasmodic/ecto_ros/issues/10>`_ from stonier/get_subscribers
   Check for subscribers before publishing
 * get subscribers to give the scheduler a chance to make decisions instead of permanently blocking.
