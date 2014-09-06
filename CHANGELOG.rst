@@ -2,6 +2,13 @@
 Changelog for package ecto_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#10 <https://github.com/plasmodic/ecto_ros/issues/10>`_ from stonier/get_subscribers
+  Check for subscribers before publishing
+* get subscribers to give the scheduler a chance to make decisions instead of permanently blocking.
+* Contributors: Daniel Stonier, Vincent Rabaud
+
 0.4.3 (2014-07-27)
 ------------------
 * Actually apply the queue size
