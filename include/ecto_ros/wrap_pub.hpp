@@ -48,6 +48,7 @@ namespace ecto_ros
     int queue_size_;
     bool latched_;
     ecto::spore<MessageConstPtr> in_;
+    ecto::spore<bool> has_subscribers_;
 
     void
     setupPubs()
@@ -70,9 +71,10 @@ namespace ecto_ros
     }
 
     static void
-    declare_io(const ecto::tendrils& /*p*/, ecto::tendrils& in, ecto::tendrils& /*out*/)
+    declare_io(const ecto::tendrils& /*p*/, ecto::tendrils& in, ecto::tendrils& out)
     {
       in.declare<MessageConstPtr>("input", "The message to publish.").required(true);
+      out.declare<bool>("has_subscribers", "Has currently connected subscribers.");
     }
 
     void
@@ -82,13 +84,19 @@ namespace ecto_ros
       queue_size_ = p.get<int>("queue_size");
       latched_ = p.get<bool>("latched");
       in_ = in["input"];
+      has_subscribers_ = out["has_subscribers"];
+      // initialise this so it can be used by an entangled pair to avoid work constructing
+      // the messages before publishing (lazy publishing!)
+      *has_subscribers_ = false;
       setupPubs();
     }
 
     int
     process(const ecto::tendrils& in, const ecto::tendrils& out)
     {
-      if(*in_ && (pub_.getNumSubscribers() != 0)) {
+      int num_subscribers = pub_.getNumSubscribers();
+      *has_subscribers_ = (num_subscribers != 0) ? true : false;
+      if(*in_ && (num_subscribers != 0)) {
         pub_.publish(**in_);
       }
       return ecto::OK;
