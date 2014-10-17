@@ -96,7 +96,8 @@ namespace ecto_ros
     {
       int num_subscribers = pub_.getNumSubscribers();
       *has_subscribers_ = (num_subscribers != 0) ? true : false;
-      if(*in_ && (num_subscribers != 0)) {
+      // lazy publishing if appropriate conditions are met
+      if(*in_ && (*has_subscribers_ || latched_)) { 
         pub_.publish(**in_);
       }
       return ecto::OK;
