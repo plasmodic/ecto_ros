@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -15,7 +13,7 @@
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
+        URL_ROOT:    './',
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
@@ -102,15 +100,15 @@
 <p></p>
 </div>
 </div>
-<div class="section" id="Bagger_MultiEchoLaserScan">
-<span id="index-1"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_MultiEchoLaserScan"></span><h2>Bagger_MultiEchoLaserScan<a class="headerlink" href="#Bagger_MultiEchoLaserScan" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Subscriber_MultiDOFJointState">
+<span id="index-1"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_MultiDOFJointState"></span><h2>Subscriber_MultiDOFJointState<a class="headerlink" href="#Subscriber_MultiDOFJointState" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
-<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+<p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::MultiDOFJointState.</p>
 </p>
 <p class="topic-title first">Parameters<ul>
-<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
-<p>The bagger.</p>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
 </li>
 <li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
 <p>The topic name to subscribe to.</p>
@@ -118,7 +116,12 @@
 </ul>
 </p>
 <p></p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>output</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::MultiDOFJointState_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The received message.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Subscriber_MultiEchoLaserScan">
@@ -169,7 +172,12 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Publisher_RegionOfInterest">
@@ -196,7 +204,12 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Subscriber_MagneticField">
@@ -290,7 +303,12 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Subscriber_CameraInfo">
@@ -360,7 +378,12 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Publisher_Imu">
@@ -387,7 +410,12 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Bagger_JoyFeedback">
@@ -457,7 +485,12 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Subscriber_Illuminance">
@@ -508,7 +541,12 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Subscriber_ChannelFloat32">
@@ -559,7 +597,12 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Bagger_PointCloud">
@@ -605,7 +648,12 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Bagger_CameraInfo">
@@ -689,8 +737,27 @@
 </p>
 </div>
 </div>
+<div class="section" id="Bagger_MultiDOFJointState">
+<span id="index-26"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_MultiDOFJointState"></span><h2>Bagger_MultiDOFJointState<a class="headerlink" href="#Bagger_MultiDOFJointState" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
 <div class="section" id="Subscriber_JoyFeedback">
-<span id="index-26"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_JoyFeedback"></span><h2>Subscriber_JoyFeedback<a class="headerlink" href="#Subscriber_JoyFeedback" title="Permalink to this headline">¶</a></h2>
+<span id="index-27"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_JoyFeedback"></span><h2>Subscriber_JoyFeedback<a class="headerlink" href="#Subscriber_JoyFeedback" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::JoyFeedback.</p>
@@ -714,7 +781,7 @@
 </div>
 </div>
 <div class="section" id="Publisher_PointField">
-<span id="index-27"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_PointField"></span><h2>Publisher_PointField<a class="headerlink" href="#Publisher_PointField" title="Permalink to this headline">¶</a></h2>
+<span id="index-28"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_PointField"></span><h2>Publisher_PointField<a class="headerlink" href="#Publisher_PointField" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::PointField.</p>
@@ -737,11 +804,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Subscriber_RegionOfInterest">
-<span id="index-28"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_RegionOfInterest"></span><h2>Subscriber_RegionOfInterest<a class="headerlink" href="#Subscriber_RegionOfInterest" title="Permalink to this headline">¶</a></h2>
+<span id="index-29"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_RegionOfInterest"></span><h2>Subscriber_RegionOfInterest<a class="headerlink" href="#Subscriber_RegionOfInterest" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::RegionOfInterest.</p>
@@ -765,7 +837,7 @@
 </div>
 </div>
 <div class="section" id="Subscriber_FluidPressure">
-<span id="index-29"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_FluidPressure"></span><h2>Subscriber_FluidPressure<a class="headerlink" href="#Subscriber_FluidPressure" title="Permalink to this headline">¶</a></h2>
+<span id="index-30"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_FluidPressure"></span><h2>Subscriber_FluidPressure<a class="headerlink" href="#Subscriber_FluidPressure" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::FluidPressure.</p>
@@ -789,7 +861,7 @@
 </div>
 </div>
 <div class="section" id="Publisher_ChannelFloat32">
-<span id="index-30"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_ChannelFloat32"></span><h2>Publisher_ChannelFloat32<a class="headerlink" href="#Publisher_ChannelFloat32" title="Permalink to this headline">¶</a></h2>
+<span id="index-31"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_ChannelFloat32"></span><h2>Publisher_ChannelFloat32<a class="headerlink" href="#Publisher_ChannelFloat32" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::ChannelFloat32.</p>
@@ -812,11 +884,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Subscriber_PointField">
-<span id="index-31"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_PointField"></span><h2>Subscriber_PointField<a class="headerlink" href="#Subscriber_PointField" title="Permalink to this headline">¶</a></h2>
+<span id="index-32"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_PointField"></span><h2>Subscriber_PointField<a class="headerlink" href="#Subscriber_PointField" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::PointField.</p>
@@ -840,7 +917,7 @@
 </div>
 </div>
 <div class="section" id="Subscriber_PointCloud2">
-<span id="index-32"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_PointCloud2"></span><h2>Subscriber_PointCloud2<a class="headerlink" href="#Subscriber_PointCloud2" title="Permalink to this headline">¶</a></h2>
+<span id="index-33"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_PointCloud2"></span><h2>Subscriber_PointCloud2<a class="headerlink" href="#Subscriber_PointCloud2" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::PointCloud2.</p>
@@ -864,7 +941,7 @@
 </div>
 </div>
 <div class="section" id="Publisher_FluidPressure">
-<span id="index-33"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_FluidPressure"></span><h2>Publisher_FluidPressure<a class="headerlink" href="#Publisher_FluidPressure" title="Permalink to this headline">¶</a></h2>
+<span id="index-34"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_FluidPressure"></span><h2>Publisher_FluidPressure<a class="headerlink" href="#Publisher_FluidPressure" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::FluidPressure.</p>
@@ -887,11 +964,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Bagger_PointField">
-<span id="index-34"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_PointField"></span><h2>Bagger_PointField<a class="headerlink" href="#Bagger_PointField" title="Permalink to this headline">¶</a></h2>
+<span id="index-35"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_PointField"></span><h2>Bagger_PointField<a class="headerlink" href="#Bagger_PointField" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -910,7 +992,7 @@
 </div>
 </div>
 <div class="section" id="Publisher_Image">
-<span id="index-35"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_Image"></span><h2>Publisher_Image<a class="headerlink" href="#Publisher_Image" title="Permalink to this headline">¶</a></h2>
+<span id="index-36"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_Image"></span><h2>Publisher_Image<a class="headerlink" href="#Publisher_Image" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::Image.</p>
@@ -933,11 +1015,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Bagger_Range">
-<span id="index-36"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Range"></span><h2>Bagger_Range<a class="headerlink" href="#Bagger_Range" title="Permalink to this headline">¶</a></h2>
+<span id="index-37"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Range"></span><h2>Bagger_Range<a class="headerlink" href="#Bagger_Range" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -956,7 +1043,7 @@
 </div>
 </div>
 <div class="section" id="Bagger_NavSatFix">
-<span id="index-37"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_NavSatFix"></span><h2>Bagger_NavSatFix<a class="headerlink" href="#Bagger_NavSatFix" title="Permalink to this headline">¶</a></h2>
+<span id="index-38"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_NavSatFix"></span><h2>Bagger_NavSatFix<a class="headerlink" href="#Bagger_NavSatFix" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -975,7 +1062,7 @@
 </div>
 </div>
 <div class="section" id="Publisher_PointCloud2">
-<span id="index-38"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_PointCloud2"></span><h2>Publisher_PointCloud2<a class="headerlink" href="#Publisher_PointCloud2" title="Permalink to this headline">¶</a></h2>
+<span id="index-39"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_PointCloud2"></span><h2>Publisher_PointCloud2<a class="headerlink" href="#Publisher_PointCloud2" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::PointCloud2.</p>
@@ -998,11 +1085,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Publisher_MultiEchoLaserScan">
-<span id="index-39"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_MultiEchoLaserScan"></span><h2>Publisher_MultiEchoLaserScan<a class="headerlink" href="#Publisher_MultiEchoLaserScan" title="Permalink to this headline">¶</a></h2>
+<span id="index-40"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_MultiEchoLaserScan"></span><h2>Publisher_MultiEchoLaserScan<a class="headerlink" href="#Publisher_MultiEchoLaserScan" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::MultiEchoLaserScan.</p>
@@ -1025,11 +1117,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Bagger_LaserEcho">
-<span id="index-40"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_LaserEcho"></span><h2>Bagger_LaserEcho<a class="headerlink" href="#Bagger_LaserEcho" title="Permalink to this headline">¶</a></h2>
+<span id="index-41"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_LaserEcho"></span><h2>Bagger_LaserEcho<a class="headerlink" href="#Bagger_LaserEcho" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -1048,7 +1145,7 @@
 </div>
 </div>
 <div class="section" id="Publisher_LaserEcho">
-<span id="index-41"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_LaserEcho"></span><h2>Publisher_LaserEcho<a class="headerlink" href="#Publisher_LaserEcho" title="Permalink to this headline">¶</a></h2>
+<span id="index-42"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_LaserEcho"></span><h2>Publisher_LaserEcho<a class="headerlink" href="#Publisher_LaserEcho" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::LaserEcho.</p>
@@ -1071,11 +1168,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Publisher_PointCloud">
-<span id="index-42"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_PointCloud"></span><h2>Publisher_PointCloud<a class="headerlink" href="#Publisher_PointCloud" title="Permalink to this headline">¶</a></h2>
+<span id="index-43"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_PointCloud"></span><h2>Publisher_PointCloud<a class="headerlink" href="#Publisher_PointCloud" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::PointCloud.</p>
@@ -1098,11 +1200,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Publisher_NavSatStatus">
-<span id="index-43"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_NavSatStatus"></span><h2>Publisher_NavSatStatus<a class="headerlink" href="#Publisher_NavSatStatus" title="Permalink to this headline">¶</a></h2>
+<span id="index-44"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_NavSatStatus"></span><h2>Publisher_NavSatStatus<a class="headerlink" href="#Publisher_NavSatStatus" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::NavSatStatus.</p>
@@ -1125,11 +1232,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Subscriber_NavSatFix">
-<span id="index-44"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_NavSatFix"></span><h2>Subscriber_NavSatFix<a class="headerlink" href="#Subscriber_NavSatFix" title="Permalink to this headline">¶</a></h2>
+<span id="index-45"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_NavSatFix"></span><h2>Subscriber_NavSatFix<a class="headerlink" href="#Subscriber_NavSatFix" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::NavSatFix.</p>
@@ -1152,8 +1264,27 @@
 </p>
 </div>
 </div>
+<div class="section" id="Bagger_MultiEchoLaserScan">
+<span id="index-46"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_MultiEchoLaserScan"></span><h2>Bagger_MultiEchoLaserScan<a class="headerlink" href="#Bagger_MultiEchoLaserScan" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>bagger</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;ecto_ros::Bagger_base</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">[not</span> <span class="pre">visible</span> <span class="pre">from</span> <span class="pre">python]</span></tt></p>
+<p>The bagger.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to subscribe to.</p>
+</li>
+</ul>
+</p>
+<p></p>
+<p></p>
+</div>
+</div>
 <div class="section" id="Subscriber_CompressedImage">
-<span id="index-45"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_CompressedImage"></span><h2>Subscriber_CompressedImage<a class="headerlink" href="#Subscriber_CompressedImage" title="Permalink to this headline">¶</a></h2>
+<span id="index-47"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_CompressedImage"></span><h2>Subscriber_CompressedImage<a class="headerlink" href="#Subscriber_CompressedImage" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::CompressedImage.</p>
@@ -1177,7 +1308,7 @@
 </div>
 </div>
 <div class="section" id="Bagger_FluidPressure">
-<span id="index-46"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_FluidPressure"></span><h2>Bagger_FluidPressure<a class="headerlink" href="#Bagger_FluidPressure" title="Permalink to this headline">¶</a></h2>
+<span id="index-48"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_FluidPressure"></span><h2>Bagger_FluidPressure<a class="headerlink" href="#Bagger_FluidPressure" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -1196,7 +1327,7 @@
 </div>
 </div>
 <div class="section" id="Subscriber_RelativeHumidity">
-<span id="index-47"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_RelativeHumidity"></span><h2>Subscriber_RelativeHumidity<a class="headerlink" href="#Subscriber_RelativeHumidity" title="Permalink to this headline">¶</a></h2>
+<span id="index-49"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_RelativeHumidity"></span><h2>Subscriber_RelativeHumidity<a class="headerlink" href="#Subscriber_RelativeHumidity" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::RelativeHumidity.</p>
@@ -1220,7 +1351,7 @@
 </div>
 </div>
 <div class="section" id="Publisher_Range">
-<span id="index-48"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_Range"></span><h2>Publisher_Range<a class="headerlink" href="#Publisher_Range" title="Permalink to this headline">¶</a></h2>
+<span id="index-50"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_Range"></span><h2>Publisher_Range<a class="headerlink" href="#Publisher_Range" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::Range.</p>
@@ -1243,11 +1374,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Bagger_Illuminance">
-<span id="index-49"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Illuminance"></span><h2>Bagger_Illuminance<a class="headerlink" href="#Bagger_Illuminance" title="Permalink to this headline">¶</a></h2>
+<span id="index-51"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Illuminance"></span><h2>Bagger_Illuminance<a class="headerlink" href="#Bagger_Illuminance" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -1266,7 +1402,7 @@
 </div>
 </div>
 <div class="section" id="Publisher_JoyFeedback">
-<span id="index-50"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_JoyFeedback"></span><h2>Publisher_JoyFeedback<a class="headerlink" href="#Publisher_JoyFeedback" title="Permalink to this headline">¶</a></h2>
+<span id="index-52"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_JoyFeedback"></span><h2>Publisher_JoyFeedback<a class="headerlink" href="#Publisher_JoyFeedback" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::JoyFeedback.</p>
@@ -1289,11 +1425,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Subscriber_TimeReference">
-<span id="index-51"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_TimeReference"></span><h2>Subscriber_TimeReference<a class="headerlink" href="#Subscriber_TimeReference" title="Permalink to this headline">¶</a></h2>
+<span id="index-53"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_TimeReference"></span><h2>Subscriber_TimeReference<a class="headerlink" href="#Subscriber_TimeReference" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::TimeReference.</p>
@@ -1316,8 +1457,40 @@
 </p>
 </div>
 </div>
+<div class="section" id="Publisher_MultiDOFJointState">
+<span id="index-54"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_MultiDOFJointState"></span><h2>Publisher_MultiDOFJointState<a class="headerlink" href="#Publisher_MultiDOFJointState" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="topic">
+<p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::MultiDOFJointState.</p>
+</p>
+<p class="topic-title first">Parameters<ul>
+<li><p class="first"><strong>latched</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">False</span></tt></p>
+<p>Is this a latched topic?</p>
+</li>
+<li><p class="first"><strong>queue_size</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">int</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em> not </em><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">2</span></tt></p>
+<p>The amount to buffer incoming messages.</p>
+</li>
+<li><p class="first"><strong>topic_name</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">std::string</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt><em>required</em><tt class="docutils literal">&nbsp;&nbsp; </tt><em> default: </em><tt class="docutils literal"><span class="pre">/ros/topic/name</span></tt></p>
+<p>The topic name to publish to. May be remapped.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Inputs<ul>
+<li><p class="first"><strong>input</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">boost::shared_ptr&lt;sensor_msgs::MultiDOFJointState_&lt;std::allocator&lt;void&gt;</span> <span class="pre">&gt;</span> <span class="pre">const&gt;</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>The message to publish.</p>
+</li>
+</ul>
+</p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
+</div>
+</div>
 <div class="section" id="Subscriber_PointCloud">
-<span id="index-52"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_PointCloud"></span><h2>Subscriber_PointCloud<a class="headerlink" href="#Subscriber_PointCloud" title="Permalink to this headline">¶</a></h2>
+<span id="index-55"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_PointCloud"></span><h2>Subscriber_PointCloud<a class="headerlink" href="#Subscriber_PointCloud" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::PointCloud.</p>
@@ -1341,7 +1514,7 @@
 </div>
 </div>
 <div class="section" id="Publisher_NavSatFix">
-<span id="index-53"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_NavSatFix"></span><h2>Publisher_NavSatFix<a class="headerlink" href="#Publisher_NavSatFix" title="Permalink to this headline">¶</a></h2>
+<span id="index-56"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_NavSatFix"></span><h2>Publisher_NavSatFix<a class="headerlink" href="#Publisher_NavSatFix" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::NavSatFix.</p>
@@ -1364,11 +1537,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Publisher_CompressedImage">
-<span id="index-54"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_CompressedImage"></span><h2>Publisher_CompressedImage<a class="headerlink" href="#Publisher_CompressedImage" title="Permalink to this headline">¶</a></h2>
+<span id="index-57"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_CompressedImage"></span><h2>Publisher_CompressedImage<a class="headerlink" href="#Publisher_CompressedImage" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::CompressedImage.</p>
@@ -1391,11 +1569,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Bagger_NavSatStatus">
-<span id="index-55"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_NavSatStatus"></span><h2>Bagger_NavSatStatus<a class="headerlink" href="#Bagger_NavSatStatus" title="Permalink to this headline">¶</a></h2>
+<span id="index-58"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_NavSatStatus"></span><h2>Bagger_NavSatStatus<a class="headerlink" href="#Bagger_NavSatStatus" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -1414,7 +1597,7 @@
 </div>
 </div>
 <div class="section" id="Subscriber_LaserScan">
-<span id="index-56"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_LaserScan"></span><h2>Subscriber_LaserScan<a class="headerlink" href="#Subscriber_LaserScan" title="Permalink to this headline">¶</a></h2>
+<span id="index-59"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_LaserScan"></span><h2>Subscriber_LaserScan<a class="headerlink" href="#Subscriber_LaserScan" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::LaserScan.</p>
@@ -1438,7 +1621,7 @@
 </div>
 </div>
 <div class="section" id="Bagger_JoyFeedbackArray">
-<span id="index-57"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_JoyFeedbackArray"></span><h2>Bagger_JoyFeedbackArray<a class="headerlink" href="#Bagger_JoyFeedbackArray" title="Permalink to this headline">¶</a></h2>
+<span id="index-60"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_JoyFeedbackArray"></span><h2>Bagger_JoyFeedbackArray<a class="headerlink" href="#Bagger_JoyFeedbackArray" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -1457,7 +1640,7 @@
 </div>
 </div>
 <div class="section" id="Subscriber_JointState">
-<span id="index-58"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_JointState"></span><h2>Subscriber_JointState<a class="headerlink" href="#Subscriber_JointState" title="Permalink to this headline">¶</a></h2>
+<span id="index-61"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_JointState"></span><h2>Subscriber_JointState<a class="headerlink" href="#Subscriber_JointState" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::JointState.</p>
@@ -1481,7 +1664,7 @@
 </div>
 </div>
 <div class="section" id="Publisher_MagneticField">
-<span id="index-59"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_MagneticField"></span><h2>Publisher_MagneticField<a class="headerlink" href="#Publisher_MagneticField" title="Permalink to this headline">¶</a></h2>
+<span id="index-62"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_MagneticField"></span><h2>Publisher_MagneticField<a class="headerlink" href="#Publisher_MagneticField" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::MagneticField.</p>
@@ -1504,11 +1687,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Bagger_Image">
-<span id="index-60"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Image"></span><h2>Bagger_Image<a class="headerlink" href="#Bagger_Image" title="Permalink to this headline">¶</a></h2>
+<span id="index-63"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Image"></span><h2>Bagger_Image<a class="headerlink" href="#Bagger_Image" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -1527,7 +1715,7 @@
 </div>
 </div>
 <div class="section" id="Bagger_RelativeHumidity">
-<span id="index-61"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_RelativeHumidity"></span><h2>Bagger_RelativeHumidity<a class="headerlink" href="#Bagger_RelativeHumidity" title="Permalink to this headline">¶</a></h2>
+<span id="index-64"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_RelativeHumidity"></span><h2>Bagger_RelativeHumidity<a class="headerlink" href="#Bagger_RelativeHumidity" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -1546,7 +1734,7 @@
 </div>
 </div>
 <div class="section" id="Bagger_Temperature">
-<span id="index-62"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Temperature"></span><h2>Bagger_Temperature<a class="headerlink" href="#Bagger_Temperature" title="Permalink to this headline">¶</a></h2>
+<span id="index-65"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Temperature"></span><h2>Bagger_Temperature<a class="headerlink" href="#Bagger_Temperature" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -1565,7 +1753,7 @@
 </div>
 </div>
 <div class="section" id="Bagger_Joy">
-<span id="index-63"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Joy"></span><h2>Bagger_Joy<a class="headerlink" href="#Bagger_Joy" title="Permalink to this headline">¶</a></h2>
+<span id="index-66"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Joy"></span><h2>Bagger_Joy<a class="headerlink" href="#Bagger_Joy" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -1584,7 +1772,7 @@
 </div>
 </div>
 <div class="section" id="Bagger_JointState">
-<span id="index-64"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_JointState"></span><h2>Bagger_JointState<a class="headerlink" href="#Bagger_JointState" title="Permalink to this headline">¶</a></h2>
+<span id="index-67"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_JointState"></span><h2>Bagger_JointState<a class="headerlink" href="#Bagger_JointState" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -1603,7 +1791,7 @@
 </div>
 </div>
 <div class="section" id="Subscriber_Imu">
-<span id="index-65"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_Imu"></span><h2>Subscriber_Imu<a class="headerlink" href="#Subscriber_Imu" title="Permalink to this headline">¶</a></h2>
+<span id="index-68"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_Imu"></span><h2>Subscriber_Imu<a class="headerlink" href="#Subscriber_Imu" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::Imu.</p>
@@ -1627,7 +1815,7 @@
 </div>
 </div>
 <div class="section" id="Bagger_MagneticField">
-<span id="index-66"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_MagneticField"></span><h2>Bagger_MagneticField<a class="headerlink" href="#Bagger_MagneticField" title="Permalink to this headline">¶</a></h2>
+<span id="index-69"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_MagneticField"></span><h2>Bagger_MagneticField<a class="headerlink" href="#Bagger_MagneticField" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -1646,7 +1834,7 @@
 </div>
 </div>
 <div class="section" id="Bagger_LaserScan">
-<span id="index-67"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_LaserScan"></span><h2>Bagger_LaserScan<a class="headerlink" href="#Bagger_LaserScan" title="Permalink to this headline">¶</a></h2>
+<span id="index-70"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_LaserScan"></span><h2>Bagger_LaserScan<a class="headerlink" href="#Bagger_LaserScan" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -1665,7 +1853,7 @@
 </div>
 </div>
 <div class="section" id="Subscriber_Range">
-<span id="index-68"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_Range"></span><h2>Subscriber_Range<a class="headerlink" href="#Subscriber_Range" title="Permalink to this headline">¶</a></h2>
+<span id="index-71"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_Range"></span><h2>Subscriber_Range<a class="headerlink" href="#Subscriber_Range" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::Range.</p>
@@ -1689,7 +1877,7 @@
 </div>
 </div>
 <div class="section" id="Publisher_Temperature">
-<span id="index-69"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_Temperature"></span><h2>Publisher_Temperature<a class="headerlink" href="#Publisher_Temperature" title="Permalink to this headline">¶</a></h2>
+<span id="index-72"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_Temperature"></span><h2>Publisher_Temperature<a class="headerlink" href="#Publisher_Temperature" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::Temperature.</p>
@@ -1712,11 +1900,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Publisher_Illuminance">
-<span id="index-70"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_Illuminance"></span><h2>Publisher_Illuminance<a class="headerlink" href="#Publisher_Illuminance" title="Permalink to this headline">¶</a></h2>
+<span id="index-73"></span><span id="ecto_ros.ecto_sensor_msgs.Publisher_Illuminance"></span><h2>Publisher_Illuminance<a class="headerlink" href="#Publisher_Illuminance" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Publishes a sensor_msgs::Illuminance.</p>
@@ -1739,11 +1932,16 @@
 </li>
 </ul>
 </p>
-<p></p>
+<p class="topic-title first">Outputs<ul>
+<li><p class="first"><strong>has_subscribers</strong><tt class="docutils literal">&nbsp;&nbsp; </tt><em>   type: </em><tt class="docutils literal"><span class="pre">bool</span> </tt><tt class="docutils literal">&nbsp;&nbsp; </tt></p>
+<p>Has currently connected subscribers.</p>
+</li>
+</ul>
+</p>
 </div>
 </div>
 <div class="section" id="Subscriber_LaserEcho">
-<span id="index-71"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_LaserEcho"></span><h2>Subscriber_LaserEcho<a class="headerlink" href="#Subscriber_LaserEcho" title="Permalink to this headline">¶</a></h2>
+<span id="index-74"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_LaserEcho"></span><h2>Subscriber_LaserEcho<a class="headerlink" href="#Subscriber_LaserEcho" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::LaserEcho.</p>
@@ -1767,7 +1965,7 @@
 </div>
 </div>
 <div class="section" id="Subscriber_Temperature">
-<span id="index-72"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_Temperature"></span><h2>Subscriber_Temperature<a class="headerlink" href="#Subscriber_Temperature" title="Permalink to this headline">¶</a></h2>
+<span id="index-75"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_Temperature"></span><h2>Subscriber_Temperature<a class="headerlink" href="#Subscriber_Temperature" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::Temperature.</p>
@@ -1791,7 +1989,7 @@
 </div>
 </div>
 <div class="section" id="Subscriber_Joy">
-<span id="index-73"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_Joy"></span><h2>Subscriber_Joy<a class="headerlink" href="#Subscriber_Joy" title="Permalink to this headline">¶</a></h2>
+<span id="index-76"></span><span id="ecto_ros.ecto_sensor_msgs.Subscriber_Joy"></span><h2>Subscriber_Joy<a class="headerlink" href="#Subscriber_Joy" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>Subscribes to a sensor_msgs::Joy.</p>
@@ -1815,7 +2013,7 @@
 </div>
 </div>
 <div class="section" id="Bagger_Imu">
-<span id="index-74"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Imu"></span><h2>Bagger_Imu<a class="headerlink" href="#Bagger_Imu" title="Permalink to this headline">¶</a></h2>
+<span id="index-77"></span><span id="ecto_ros.ecto_sensor_msgs.Bagger_Imu"></span><h2>Bagger_Imu<a class="headerlink" href="#Bagger_Imu" title="Permalink to this headline">¶</a></h2>
 <p></p>
 <div class="topic">
 <p class="topic-title first">Brief doc<p>A bagger for messages of a given type. Can enable read/write to ros bags.</p>
@@ -1857,8 +2055,8 @@
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2012,  Willow Garage, Inc.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+        &copy; Copyright 2013,  Willow Garage, Inc.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
 </html>
