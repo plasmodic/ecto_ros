@@ -107,20 +107,11 @@ class LazyMat2ImagePublisher(ecto.BlackBox):
 
         return (p, i, o)
 
-    def configure(self, _p, _i, _o):
-        """
-        This is run before connections and configures each cell in the graph
-        """
-        self.graph = [
+    def connections(self, _p):
+        return [
             self.subscribers_input[:] >> self.throttled_mat2image['has_subscribers'],
             self.throttle['flag'] >> self.throttled_mat2image['throttle'],
             self.throttled_mat2image['image'] >> self.throttled_publisher['input'],
             self.throttle['flag'] >> self.throttled_publisher['throttle'],
             self.throttled_publisher['has_subscribers'] >> self.subscribers_output[:],
         ]
-        plasm = ecto.Plasm()
-        plasm.connect(self.graph)
-        plasm.configure_all()
-
-    def connections(self, _p):
-        return self.graph
