@@ -82,6 +82,8 @@ namespace ecto_ros
         cells_.push_back(cell);
         cell->configure();
       }
+      // prep the helpers for processing
+      unprocessed_cells.assign(cells_.begin(), cells_.end());
     }
 
     int
@@ -95,7 +97,7 @@ namespace ecto_ros
         } else if (value == ecto::DO_OVER) {
             return ecto::DO_OVER;  // give the scheduler an opportunity to act (e.g. shutdown)
         } else if (value == ecto::OK) {
-            iter == unprocessed_cells.erase(iter);
+            iter = unprocessed_cells.erase(iter);
         }
       }
       // if we get here, all cells have been processed, clear them ready for the next run 
