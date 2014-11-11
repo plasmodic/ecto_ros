@@ -2,8 +2,8 @@
 Changelog for package ecto_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.4.5 (2014-11-11)
+------------------
 * Merge pull request `#15 <https://github.com/plasmodic/ecto_ros/issues/15>`_ from stonier/synch_fix
   Synchroniser fixes to behavior introduced by subscriber DO_OVER's
 * bugfixes for the synchroniser fixes.
