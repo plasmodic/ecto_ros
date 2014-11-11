@@ -2,6 +2,24 @@
 Changelog for package ecto_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#15 <https://github.com/plasmodic/ecto_ros/issues/15>`_ from stonier/synch_fix
+  Synchroniser fixes to behavior introduced by subscriber DO_OVER's
+* bugfixes for the synchroniser fixes.
+* a plasm should not be created in the configure function
+  I fixed that as the doc was broken (make sphinx-doc did not work)
+* Merge pull request `#13 <https://github.com/plasmodic/ecto_ros/issues/13>`_ from stonier/lazy_publishing
+  Exposing number of subscribers
+* Merge pull request `#14 <https://github.com/plasmodic/ecto_ros/issues/14>`_ from stonier/lazy_mat2img_publisher
+  Lazy Mat2Image publisher blackbox
+* bugfix subscriber cell handling in synchronisers for recent DO_OVER update, closes `#11 <https://github.com/plasmodic/ecto_ros/issues/11>`_
+* lazy mat2image publisher blackbox.
+* do not be lazy if it is a latched publisher.
+* publisher cells now provide a has_subscribers boolean output.
+* check for number of subscribers.
+* Contributors: Daniel Stonier, Vincent Rabaud
+
 0.4.4 (2014-09-06)
 ------------------
 * Merge pull request `#10 <https://github.com/plasmodic/ecto_ros/issues/10>`_ from stonier/get_subscribers
