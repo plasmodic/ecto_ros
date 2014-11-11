@@ -82,20 +82,31 @@ namespace ecto_ros
         cells_.push_back(cell);
         cell->configure();
       }
+      // prep the helpers for processing
+      unprocessed_cells.assign(cells_.begin(), cells_.end());
     }
 
     int
     process(const tendrils& in, const tendrils& out)
     {
-      BOOST_FOREACH(ecto::cell::ptr cell,cells_)
-      {
-        int value = cell->process();
-        if(value == ecto::QUIT)
-          return ecto::QUIT;
+      std::list<ecto::cell::ptr>::iterator iter;
+      for(iter = unprocessed_cells.begin(); iter != unprocessed_cells.end();) {
+        int value = (*iter)->process();
+        if(value == ecto::QUIT) {
+	    return ecto::QUIT;
+        } else if (value == ecto::DO_OVER) {
+            return ecto::DO_OVER;  // give the scheduler an opportunity to act (e.g. shutdown)
+        } else if (value == ecto::OK) {
+            iter = unprocessed_cells.erase(iter);
+        }
       }
+      // if we get here, all cells have been processed, clear them ready for the next run 
+      unprocessed_cells.assign(cells_.begin(), cells_.end());
       return ecto::OK;
     }
     std::vector<ecto::cell::ptr> cells_;
+  private:
+    std::list<ecto::cell::ptr> unprocessed_cells;
   };
 }
 
