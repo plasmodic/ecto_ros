@@ -2,8 +2,8 @@
 Changelog for package ecto_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.4.6 (2015-02-07)
+------------------
 * do not install files from devel
   fixes `#16 <https://github.com/plasmodic/ecto_ros/issues/16>`_
 * clean extensions
