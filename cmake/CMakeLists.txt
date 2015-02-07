@@ -5,11 +5,11 @@ foreach(file pubsub_gen_wrap.cmake gen_msg_wrappers.py)
     )
 endforeach()
 
-# install the extra CMake files
-install(DIRECTORY ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION}/cmake
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-        COMPONENT main
-        USE_SOURCE_PERMISSIONS
+install(PROGRAMS ${PROJECT_SOURCE_DIR}/cmake/gen_msg_wrappers.py
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/cmake/
+)
+install(FILES ${PROJECT_SOURCE_DIR}/cmake/pubsub_gen_wrap.cmake
+        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/cmake/
 )
 
 # install the include folder
