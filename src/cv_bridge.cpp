@@ -277,14 +277,21 @@ namespace ecto_ros
     {
       ImageConstPtr image = *image_msg_;
       cv::Mat mat;
-      // Construct matrix pointing to source data
-      int source_type = getCvType(image->encoding);
-      cv::Mat temp((int) image->height, (int) image->width, source_type, const_cast<uint8_t*>(&image->data[0]),
-                   (size_t) image->step);
-      if (swap_rgb_)
-        cv::cvtColor(temp, mat, CV_BGR2RGB);
-      else
-        temp.copyTo(mat);
+      // lazy conversion - only do something if there is an established incoming image
+      //   i.e. check there is an image input, and that there has at least been some effort
+      //   to initialise it with something by checking the encoding field.
+      // If nothing interesting coming in, just pass out an empty cv::Mat object.
+      //   i.e. let the consumer decide how he wants to handle it.
+      if ( image && !image->encoding.empty() ) {
+        // Construct matrix pointing to source data
+        int source_type = getCvType(image->encoding);
+        cv::Mat temp((int) image->height, (int) image->width, source_type, const_cast<uint8_t*>(&image->data[0]),
+                     (size_t) image->step);
+        if (swap_rgb_)
+          cv::cvtColor(temp, mat, CV_BGR2RGB);
+        else
+          temp.copyTo(mat);
+      }
       mat.copyTo(*mat_);
       return ecto::OK;
     }
