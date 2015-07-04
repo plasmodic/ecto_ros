@@ -27,6 +27,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <cv_bridge/cv_bridge.h>
 #include <ecto/ecto.hpp>
 #include <sensor_msgs/PointCloud.h>
 #include <sensor_msgs/PointCloud2.h>
@@ -58,117 +59,12 @@ namespace
     }
   }
   namespace enc = sensor_msgs::image_encodings;
-  int
-  getCvType(const std::string& encoding)
-  {
-    // Check for the most common encodings first
-    if (encoding == enc::BGR8)
-      return CV_8UC3;
-    if (encoding == enc::MONO8)
-      return CV_8UC1;
-    if (encoding == enc::RGB8)
-      return CV_8UC3;
-    if (encoding == enc::MONO16)
-      return CV_16UC1;
-    if (encoding == enc::BGRA8)
-      return CV_8UC4;
-    if (encoding == enc::RGBA8)
-      return CV_8UC4;
-
-    // For bayer, return one-channel
-    if (encoding == enc::BAYER_RGGB8)
-      return CV_8UC1;
-    if (encoding == enc::BAYER_BGGR8)
-      return CV_8UC1;
-    if (encoding == enc::BAYER_GBRG8)
-      return CV_8UC1;
-    if (encoding == enc::BAYER_GRBG8)
-      return CV_8UC1;
-
-    // Check all the generic content encodings
-#define CHECK_ENCODING(code)                            \
-    if (encoding == enc::TYPE_##code) return CV_##code    \
-    /***/
-#define CHECK_CHANNEL_TYPE(t)                   \
-    CHECK_ENCODING(t##1);                         \
-    CHECK_ENCODING(t##2);                         \
-    CHECK_ENCODING(t##3);                         \
-    CHECK_ENCODING(t##4);                         \
-    /***/
-
-    CHECK_CHANNEL_TYPE(8UC);
-    CHECK_CHANNEL_TYPE(8SC);
-    CHECK_CHANNEL_TYPE(16UC);
-    CHECK_CHANNEL_TYPE(16SC);
-    CHECK_CHANNEL_TYPE(32SC);
-    CHECK_CHANNEL_TYPE(32FC);
-    CHECK_CHANNEL_TYPE(64FC);
-
-#undef CHECK_CHANNEL_TYPE
-#undef CHECK_ENCODING
-
-    throw std::runtime_error("Unrecognized image encoding [" + encoding + "]");
-  }
-
-  std::string
-  mattype2enconding(int mat_type)
-  {
-    switch (mat_type)
-    {
-      case CV_8UC1:
-        return enc::MONO8;
-      case CV_8UC3:
-        return enc::RGB8;
-      case CV_16SC1:
-        return enc::MONO16;
-      case CV_8UC4:
-        return enc::RGBA8;
-      default:
-        break;
-    }
-
-#define CASE_ENCODING(code)                    \
-    case CV_##code : return enc::TYPE_##code; do{}while(false)    \
-    /***/
-#define CASE_CHANNEL_TYPE(t)                   \
-    CASE_ENCODING(t##1);                         \
-    CASE_ENCODING(t##2);                         \
-    CASE_ENCODING(t##3);                         \
-    CASE_ENCODING(t##4);                         \
-    /***/
-    switch (mat_type)
-    {
-      CASE_CHANNEL_TYPE(8UC);
-      CASE_CHANNEL_TYPE(8SC);
-      CASE_CHANNEL_TYPE(16UC);
-      CASE_CHANNEL_TYPE(16SC);
-      CASE_CHANNEL_TYPE(32SC);
-      CASE_CHANNEL_TYPE(32FC);
-      CASE_CHANNEL_TYPE(64FC);
-      default:
-        throw std::runtime_error("Unknown encoding type.");
-    }
-
-  }
-  void
-  toImageMsg(const cv::Mat& mat, sensor_msgs::Image& ros_image)
-  {
-    ros_image.height = mat.rows;
-    ros_image.width = mat.cols;
-    ros_image.encoding = mattype2enconding(mat.type());
-    ros_image.is_bigendian = false;
-    ros_image.step = mat.step;
-    size_t size = mat.step * mat.rows;
-    ros_image.data.resize(size);
-    memcpy((char*) (&ros_image.data[0]), mat.data, size);
-  }
-
   void
   toDepthImageMsg(const sensor_msgs::PointCloud& msg, sensor_msgs::Image& ros_image)
   {
     ros_image.height = msg.points.size();
     ros_image.width = 1;
-    ros_image.encoding = mattype2enconding(CV_32F);
+    ros_image.encoding = enc::TYPE_32FC1;
     ros_image.is_bigendian = false;
     ros_image.step = sizeof(float);
     size_t size = ros_image.step * ros_image.height;
@@ -181,7 +77,7 @@ namespace
   {
     ros_image.height = msg.height;
     ros_image.width = msg.width;
-    ros_image.encoding = mattype2enconding(CV_32F);
+    ros_image.encoding = enc::TYPE_32FC1;
     ros_image.is_bigendian = false;
     ros_image.step = sizeof(float) * ros_image.width;
     size_t size = ros_image.step * ros_image.height;
@@ -256,48 +152,36 @@ namespace ecto_ros
     static void
     declare_params(ecto::tendrils& p)
     {
-      p.declare<bool>("swap_rgb", "Swap the red and blue channels", false);
+      p.declare(&Image2Mat::swap_rgb_, "swap_rgb", "Swap the red and blue channels", false);
     }
     static void
     declare_io(const tendrils& /*p*/, tendrils& i, tendrils& o)
     {
-      i.declare<ImageConstPtr>("image", "A sensor_msg::Image message from ros.");
+      i.declare(&Image2Mat::image_in_, "image", "A sensor_msg::Image message from ros.");
 
-      o.declare<cv::Mat>("image", "A cv::Mat copy.");
-    }
-    void
-    configure(const tendrils& p, const tendrils& i, const tendrils& o)
-    {
-      image_msg_ = i["image"];
-      mat_ = o["image"];
-      swap_rgb_ = p.get<bool>("swap_rgb");
+      o.declare(&Image2Mat::image_out_, "image", "A cv::Mat copy.");
     }
     int
     process(const tendrils& i, const tendrils& o)
     {
-      ImageConstPtr image = *image_msg_;
-      cv::Mat mat;
       // lazy conversion - only do something if there is an established incoming image
       //   i.e. check there is an image input, and that there has at least been some effort
       //   to initialise it with something by checking the encoding field.
       // If nothing interesting coming in, just pass out an empty cv::Mat object.
       //   i.e. let the consumer decide how he wants to handle it.
-      if ( image && !image->encoding.empty() ) {
+      if ( *image_in_ && !(*image_in_)->encoding.empty() ) {
         // Construct matrix pointing to source data
-        int source_type = getCvType(image->encoding);
-        cv::Mat temp((int) image->height, (int) image->width, source_type, const_cast<uint8_t*>(&image->data[0]),
-                     (size_t) image->step);
-        if (swap_rgb_)
-          cv::cvtColor(temp, mat, CV_BGR2RGB);
+        cv_bridge::CvImageConstPtr cv_image = cv_bridge::toCvShare(*image_in_);
+        if (*swap_rgb_)
+          cv::cvtColor(cv_image->image, *image_out_, cv::COLOR_BGR2RGB);
         else
-          temp.copyTo(mat);
+          cv_image->image.copyTo(*image_out_);
       }
-      mat.copyTo(*mat_);
       return ecto::OK;
     }
-    ecto::spore<ImageConstPtr> image_msg_;
-    ecto::spore<cv::Mat> mat_;
-    bool swap_rgb_;
+    ecto::spore<ImageConstPtr> image_in_;
+    ecto::spore<cv::Mat> image_out_;
+    ecto::spore<bool> swap_rgb_;
   };
 
   struct Mat2Image
@@ -305,57 +189,41 @@ namespace ecto_ros
     static void
     declare_params(tendrils& p)
     {
-      p.declare<std::string>("frame_id", "Frame this data is associated with", "default_frame");
-      p.declare<std::string>("encoding", "ROS image message encoding override.");
-      p.declare<bool>("swap_rgb", "Swap the red and blue channels", false);
+      p.declare(&Mat2Image::frame_id_, "frame_id", "Frame this data is associated with", "default_frame");
+      p.declare(&Mat2Image::encoding_, "encoding", "ROS image message encoding override.", "");
+      p.declare(&Mat2Image::swap_rgb_, "swap_rgb", "Swap the red and blue channels", false);
 
     }
 
     static void
     declare_io(const tendrils& /*p*/, tendrils& i, tendrils& o)
     {
-      i.declare<cv::Mat>("image", "A cv::Mat.");
-      o.declare<ImageConstPtr>("image", "A sensor_msg::Image message.");
+      i.declare(&Mat2Image::mat_, "image", "A cv::Mat.");
+      o.declare(&Mat2Image::image_out_, "image", "A sensor_msg::Image message.");
     }
 
-    void
-    configure(const tendrils& p, const tendrils& i, const tendrils& o)
-    {
-      mat_ = i["image"];
-      cloud_msg_out_ = o["image"];
-      frame_id_ = p.get<std::string>("frame_id");
-      header_.frame_id = frame_id_;
-      encoding_ = p["encoding"];
-      swap_rgb_ = p.get<bool>("swap_rgb");
-
-    }
     int
     process(const tendrils& i, const tendrils& o)
     {
-      ImagePtr image_msg(new Image);
       cv::Mat mat;
-      if (swap_rgb_)
-        cv::cvtColor(*mat_, mat, CV_BGR2RGB);
+      if (*swap_rgb_)
+        cv::cvtColor(*mat_, mat, cv::COLOR_BGR2RGB);
       else
         mat = *mat_;
 
-      toImageMsg(mat, *image_msg);
-      if (encoding_.user_supplied())
-      {
-        image_msg->encoding = *encoding_;
-      }
-
+      header_.frame_id = *frame_id_;
       header_stanza(header_);
-      image_msg->header = header_;
-      *cloud_msg_out_ = image_msg;
+
+      *image_out_ = cv_bridge::CvImage(header_, *encoding_, mat).toImageMsg();
+
       return ecto::OK;
     }
     std_msgs::Header header_;
-    std::string frame_id_;
-    ecto::spore<ImageConstPtr> cloud_msg_out_;
+    ecto::spore<std::string> frame_id_;
+    ecto::spore<ImagePtr> image_out_;
     ecto::spore<cv::Mat> mat_;
     ecto::spore<std::string> encoding_;
-    bool swap_rgb_;
+    ecto::spore<bool> swap_rgb_;
   };
 
   template<typename PointCloudT>

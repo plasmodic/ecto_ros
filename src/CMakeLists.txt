@@ -3,7 +3,6 @@ find_package(Eigen REQUIRED)
 
 include_directories(${catkin_INCLUDE_DIRS}
                     ${Eigen_INCLUDE_DIRS}
-                    ${ROS_INCLUDE_DIRS}
 )
 
 ectomodule(ecto_ros_main DESTINATION ecto_ros INSTALL
@@ -19,10 +18,7 @@ ectomodule(ecto_ros_main DESTINATION ecto_ros INSTALL
 
 link_ecto(ecto_ros_main
   ${OpenCV_LIBS}
-  ${roscpp_LIBRARIES}
-  ${rosbag_LIBRARIES}
-  ${geometry_msgs_LIBRARIES}
-  ${sensor_msgs_LIBRARIES}
+  ${catkin_LIBRARIES}
   )
 
 pubsub_gen_wrap(std_msgs DESTINATION ecto_ros INSTALL)

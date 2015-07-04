@@ -1,13 +1,10 @@
 cmake_minimum_required(VERSION 2.8)
 project(ecto_ros)
 
-find_package(catkin)
-find_package(catkin REQUIRED cmake_modules geometry_msgs nav_msgs rosbag roscpp sensor_msgs std_msgs)
+find_package(catkin REQUIRED cmake_modules cv_bridge ecto geometry_msgs nav_msgs rosbag roscpp sensor_msgs std_msgs)
 catkin_package(CFG_EXTRAS ecto_ros-extras.cmake
                INCLUDE_DIRS include
 )
-
-find_package(ecto REQUIRED)
 
 add_definitions(-Wno-strict-aliasing)
 
