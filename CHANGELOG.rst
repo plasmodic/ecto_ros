@@ -2,8 +2,8 @@
 Changelog for package ecto_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.4.7 (2015-07-05)
+------------------
 * remove code that was in cv_bridge
 * [Image2Mat] lazy conversion depending on presence of input.
   This lets the consumer of the cv mat decide how he wants to handle
