@@ -220,7 +220,7 @@ namespace ecto_ros
     }
     std_msgs::Header header_;
     ecto::spore<std::string> frame_id_;
-    ecto::spore<ImagePtr> image_out_;
+    ecto::spore<ImageConstPtr> image_out_;
     ecto::spore<cv::Mat> mat_;
     ecto::spore<std::string> encoding_;
     ecto::spore<bool> swap_rgb_;
