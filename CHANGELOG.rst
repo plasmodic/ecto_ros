@@ -2,6 +2,17 @@
 Changelog for package ecto_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* remove code that was in cv_bridge
+* [Image2Mat] lazy conversion depending on presence of input.
+  This lets the consumer of the cv mat decide how he wants to handle
+  the situation when there is nothing coming through rather than
+  the current situation where it will crash if the input shared
+  ptr is null, or throw an exception (about unknown encoding)
+  and terminate if it is an empty image message.
+* Contributors: Daniel Stonier, Vincent Rabaud
+
 0.4.6 (2015-02-07)
 ------------------
 * do not install files from devel
