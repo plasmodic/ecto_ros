@@ -112,5 +112,5 @@ macro(pubsub_gen_wrap ROS_PACKAGE)
     PROPERTIES
     OBJECT_DEPENDS ${ECTO_ROS_GEN_MSG_WRAPPERS}
     )
-  add_dependencies(ecto_${ROS_PACKAGE}_ectomodule ${ROS_PACKAGE}_gencpp)
+  add_dependencies(ecto_${ROS_PACKAGE}_ectomodule ${catkin_EXPORTED_TARGETS})
 endmacro()
