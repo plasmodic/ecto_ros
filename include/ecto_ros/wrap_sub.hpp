@@ -50,6 +50,7 @@ namespace ecto_ros
     ros::Subscriber sub_;
     std::string topic_;
     size_t queue_size_;
+    bool tcp_nodelay_;
     boost::condition_variable cond_;
     boost::mutex mut_;
     ecto::spore<MessageConstPtr> out_;
@@ -61,8 +62,10 @@ namespace ecto_ros
     {
       //look up remapping
       std::string topic = nh_.resolveName(topic_, true);
-      sub_ = nh_.subscribe(topic, queue_size_, &Subscriber::dataCallback, this);
-      ROS_INFO_STREAM("Subscribed to topic:" << topic << " with queue size of " << queue_size_);
+      ros::TransportHints transport_hints = ros::TransportHints();
+      if(tcp_nodelay_) { transport_hints.tcpNoDelay(); }
+      sub_ = nh_.subscribe(topic, queue_size_, &Subscriber::dataCallback, this, transport_hints);
+      ROS_INFO_STREAM("Subscribed to topic:" << topic << " [queue_size: " << queue_size_ << "][tcp_nodelay: " << tcp_nodelay_ << "]");
     }
 
     void
@@ -91,6 +94,7 @@ namespace ecto_ros
     {
       params.declare<std::string>("topic_name", "The topic name to subscribe to.", "/ros/topic/name").required(true);
       params.declare<int>("queue_size", "The amount to buffer incoming messages.", 2);
+      params.declare<bool>("tcp_nodelay", "Enable/disable nagle's algorithm on bundling small packets together.", false);
     }
 
     static void
@@ -104,6 +108,7 @@ namespace ecto_ros
     {
       topic_ = p.get<std::string>("topic_name");
       queue_size_ = p.get<int>("queue_size");
+      tcp_nodelay_ = p.get<bool>("tcp_nodelay");
       out_ = out["output"];
       setupSubs_async();
     }
