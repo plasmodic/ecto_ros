@@ -6,12 +6,12 @@ macro(pytest pyfile)
 endmacro()
 
 if (CATKIN_ENABLE_TESTING)
-  file(COPY t01.bag
+  catkin_download_test_data(ecto_ros_test_data https://github.com/plasmodic/ecto_data/raw/master/t01.bag
     DESTINATION ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION}/tests
+    MD5 25b21110c1077cd2e3e1dc9fc0775baa
   )
-  set(T01 ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION}/tests/t01.bag)
-#  pytest(test_bag ${T01})
-#pytest(test_sync_sub ${T01} ) 
-#pytest(test_image_sub ${T01} )
-#pytest(test_reinit ${T01} )
+  catkin_add_nosetests(test_bag.py DEPENDENCIES ecto_ros_test_data)
+  catkin_add_nosetests(test_sync_sub.py DEPENDENCIES ecto_ros_test_data)
+  catkin_add_nosetests(test_image_sub.py DEPENDENCIES ecto_ros_test_data)
+  catkin_add_nosetests(test_reinit.py DEPENDENCIES ecto_ros_test_data)
 endif()

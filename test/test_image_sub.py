@@ -3,6 +3,7 @@ import ecto
 import ecto_ros
 import ecto_ros.ecto_sensor_msgs as ecto_sensor_msgs
 from ecto_ros_test_utils import *
+from catkin.find_in_workspaces import find_in_workspaces
 
 ImageSub = ecto_sensor_msgs.Subscriber_Image
 
@@ -39,7 +40,7 @@ def do_ecto(bagname, msg_counts, Scheduler):
     assert counter_depth.outputs.count != 0
     
 if __name__ == "__main__":
-    bagname = sys.argv[1]
+    bagname = os.path.join(find_in_workspaces(search_dirs=['share'],project='ecto_ros')[0], 'tests', 't01.bag')
     msg_counts = bag_counts(bagname)
     try:
         roscore = start_roscore(delay=1)
