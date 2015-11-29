@@ -2,8 +2,8 @@
 Changelog for package ecto_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.4.8 (2015-11-30)
+------------------
 * reenable some tests
 * fix constness
 * Expose tcp_nodelay parameter for subscribers.

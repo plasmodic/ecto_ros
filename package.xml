@@ -1,6 +1,6 @@
 <package>
   <name>ecto_ros</name>
-  <version>0.4.7</version>
+  <version>0.4.8</version>
   <description>A set of generic cells to interact with ROS</description>
   <author email="erublee@willowgarage.com">Ethan Rublee</author>
   <author email="vrabaud@willowgarage.com">Vincent Rabaud</author>
