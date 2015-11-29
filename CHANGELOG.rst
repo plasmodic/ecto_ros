@@ -2,6 +2,14 @@
 Changelog for package ecto_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* reenable some tests
+* fix constness
+* Expose tcp_nodelay parameter for subscribers.
+* cleaner dependency handling
+* Contributors: Daniel Stonier, Vincent Rabaud
+
 0.4.7 (2015-07-05)
 ------------------
 * remove code that was in cv_bridge
@@ -251,12 +259,7 @@ Changelog for package ecto_ros
 * Clean up the sync_sub sample a bit, with comments.
 * Gah!
 * Clean up ros samples a bit, regarding imshow.
-* - add a new conversion from point cloud message to depth image message
-  Merge branch 'master' of git://github.com/plasmodic/ecto_ros
-  Conflicts:
-  src/cv_bridge.cpp
-* - add a new conversion from a point cloud message to a depth image message
-* Merge branch 'master' of git://github.com/plasmodic/ecto_ros
+* add a new conversion from point cloud message to depth image message
 * Adding time tweaks so that time does not depend on ros::init being called,
   Also a bit more cv bridge stuffs.  Most likely need to move this out of
   ecto_ros.
