@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import ecto
 import ecto_ros, ecto_ros.ecto_sensor_msgs as ecto_sensor_msgs
-from ecto_opencv import highgui
 from ecto_ros_test_utils import *
 import os
 from catkin.find_in_workspaces import find_in_workspaces
