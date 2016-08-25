@@ -23,8 +23,8 @@ def do_ecto():
     plasm = ecto.Plasm()
     plasm.connect(graph)
     ecto.view_plasm(plasm)
-    
-    sched = ecto.schedulers.Threadpool(plasm)
+
+    sched = ecto.Scheduler(plasm)
     sched.execute()
 
 if __name__ == "__main__":

@@ -16,7 +16,7 @@ def do_ecto():
     #some rosmsg ~> opencv type converters
     rgb = ecto_ros.Image2Mat()
     depth = ecto_ros.Image2Mat()
-    
+
     #declare a graph that just shows the images using opencv highgui
     graph = [
                 sync["image"] >> rgb["image"],
@@ -24,13 +24,13 @@ def do_ecto():
                 rgb["image"] >> imshow(name="rgb")["image"],
                 depth["image"] >> imshow(name="depth")["image"]
             ]
-    
+
     #add the graph to our ecto plasm
     plasm = ecto.Plasm()
     plasm.connect(graph)
-    
+
     #We'll use a threadpool based scheduler to execute this one.
-    sched = ecto.schedulers.Singlethreaded(plasm)
+    sched = ecto.Scheduler(plasm)
     sched.execute() #execute forever
 
 if __name__ == "__main__":
